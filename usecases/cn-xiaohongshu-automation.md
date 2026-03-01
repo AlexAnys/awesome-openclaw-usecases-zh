@@ -2,7 +2,7 @@
 
 自媒体运营者每天在小红书上的工作流程：追热点 → 写文案 → 做封面图 → 排期发布。每篇笔记从构思到发布至少一小时，如果要日更多个账号，时间直接翻倍。
 
-这个用例让 OpenClaw 完成从选题、文案撰写、封面图生成到定时发布的全流程自动化。
+这个用例通过社区开发的 OpenClaw Skill 调用 Python 自动化脚本，辅助完成选题、文案撰写、封面图生成到发布的流程。
 
 ## 它能做什么
 
@@ -14,7 +14,7 @@
 
 ## 所需技能
 
-[XiaohongshuSkills](https://github.com/white0dew/XiaohongshuSkills) —— 社区开发的小红书自动化技能，支持 OpenClaw 直接调用。
+[XiaohongshuSkills](https://github.com/white0dew/XiaohongshuSkills) —— 社区开发的小红书自动化技能。**目前仅在 Windows 上测试通过**，macOS/Linux 用户需自行验证兼容性。
 
 需要 Python 3.10+ 和 Chrome 浏览器。
 
@@ -32,7 +32,9 @@ pip install -r requirements.txt
 python scripts/cdp_publish.py login
 ```
 
-3. 用自然语言发布内容：
+3. 将项目目录放到 OpenClaw 的 skills 目录（如 `~/.openclaw/workspace/skills/`），使 OpenClaw 能识别该 Skill。
+
+4. 配置完成后，在 OpenClaw 对话中用自然语言发布内容：
 ```text
 生成一篇美妆推荐的图文笔记，明天上午 10 点发布。
 
@@ -48,7 +50,7 @@ python scripts/cdp_publish.py login
 - **多账号管理**：该技能支持多账号隔离的 Cookie 管理，可以同时管理多个运营账号
 - **数据驱动迭代**：用数据追踪功能分析哪类内容表现好，让 OpenClaw 记住你的偏好并持续优化选题
 
-> **⚠️ 注意**：小红书对自动化操作有风控策略。请遵守平台使用规范，建议以辅助创作为主，避免纯粹的批量灌水。
+> **⚠️ 风险提醒**：小红书对自动化操作有严格的风控策略，包括但不限于 Chrome 指纹检测、发布频率限制、账号行为分析等。自动化操作可能导致账号限流或封禁。**强烈建议使用测试账号验证后再用于正式账号**，以辅助创作为主，避免批量灌水。
 
 ## 相关链接
 

@@ -19,8 +19,8 @@
 根据你的邮箱选择：
 
 - 国内邮箱（163/QQ）：[imap-smtp-email](https://playbooks.com/skills/openclaw/skills/imap-smtp-email) —— 支持标准 IMAP/SMTP 协议，兼容 163、QQ 邮箱等国内服务
-- Gmail：[gog](https://docs.openclaw.ai/tools/skills) —— OpenClaw 内置的 Google Workspace 技能
-- Outlook/Microsoft 365：[outlook](https://playbooks.com/skills/openclaw/skills/outlook) —— 完整的 Outlook 邮件和日历管理
+- Gmail：[gog](https://docs.openclaw.ai/tools/skills) —— OpenClaw 官方维护的 Google Workspace 技能（需安装和配置 OAuth）
+- Outlook/Microsoft 365：[outlook](https://playbooks.com/skills/openclaw/skills/outlook) —— 完整的 Outlook 邮件和日历管理（安装：`npx playbooks add skill openclaw/skills --skill outlook`）
 
 ## 如何设置
 
@@ -33,6 +33,8 @@ npx playbooks add skill openclaw/skills --skill imap-smtp-email
 
 2. 配置 163 邮箱的 IMAP/SMTP（需要在邮箱设置中开启 IMAP 并获取授权码）
 
+> **安全提示**：邮箱授权码属于敏感凭证，请通过技能的 `.env` 文件配置，不要在对话中直接粘贴。确保 `.env` 已加入 `.gitignore`。
+
 3. 设置定时任务：
 ```text
 每天早上 9 点检查我的邮箱，把过去 24 小时的重要邮件摘要发给我。
@@ -40,9 +42,9 @@ npx playbooks add skill openclaw/skills --skill imap-smtp-email
 把摘要保存到记忆中，方便我随时查看。
 ```
 
-### 文件整理
+### 文件整理（提示词参考）
 
-无需额外技能，直接用 OpenClaw 的文件操作能力：
+OpenClaw 内置文件系统工具可操作本地文件，执行前会请求确认。首次使用建议在测试文件夹中试运行：
 ```text
 帮我把下载文件夹里的文件按类型分类：
 - PDF 放到"文档"文件夹
@@ -51,7 +53,7 @@ npx playbooks add skill openclaw/skills --skill imap-smtp-email
 超过 30 天未修改的文件移到"归档"文件夹。
 ```
 
-### 周报生成
+### 周报生成（提示词参考）
 
 ```text
 汇总我本周收发的工作邮件，提取关键项目进展和待办事项，生成一份周报。

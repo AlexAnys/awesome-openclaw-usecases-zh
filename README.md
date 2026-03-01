@@ -7,12 +7,12 @@
 
 <h3>OpenClaw AI 智能体最佳真实用例大全</h3>
 
-<p>37 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</p>
+<p>36 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-37-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-36-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -36,14 +36,14 @@
 
 </details>
 
-> **2026.3.1 更新**：新增 8 个中国特色用例——飞书、钉钉、企业微信三大 IM 入口全覆盖，以及小红书自动化、全网比价、办公套件等场景。详见 [中国特色用例](#-中国特色用例)。
+> **2026.3.1 更新**：新增 7 个中国特色用例——飞书、钉钉、企业微信三大 IM 入口全覆盖，以及小红书自动化、办公套件等场景。详见 [中国特色用例](#-中国特色用例)。
 
 ---
 
 ## 🗂 目录
 
 - [新手入门指南](#-新手入门指南)
-- [中国特色用例](#-中国特色用例) — 飞书、钉钉、企业微信、小红书、全网比价等国内工具场景
+- [中国特色用例](#-中国特色用例) — 飞书、钉钉、企业微信、小红书等国内工具场景
 - [社交媒体](#社交媒体) — 自动获取 Reddit、YouTube、X 等平台的精选内容
 - [创意与构建](#创意与构建) — 让 AI 帮你创作内容、构建应用
 - [基础设施与 DevOps](#基础设施与-devops) — 服务器自愈、工作流自动化
@@ -128,7 +128,6 @@
 | [早间简报（中国适配）](usecases/custom-morning-brief.md) | 每日定时推送简报到飞书/钉钉，支持中文新闻源和 cron 配置 | ⭐ |
 | [办公自动化套件](usecases/cn-office-automation.md) | 邮件管理、文件整理、会议纪要、周报生成，支持 163/QQ/Outlook | ⭐⭐ |
 | [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
-| [全网比价助手](usecases/cn-ecommerce-price-assistant.md) | 跨淘宝/京东/拼多多/抖音/快手一句话比价 | ⭐ |
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
 
 ---

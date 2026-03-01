@@ -8,7 +8,7 @@
 
 - **对话式 AI 助手**：在钉钉私聊或群聊中直接与 OpenClaw 对话
 - **Stream 模式**：WebSocket 长连接，无需公网 IP 或域名
-- **多媒体支持**：支持图片、语音、视频、文件的收发和处理
+- **多媒体支持**：支持图片、语音、视频、文件的接收和处理（部分出站类型依赖插件版本）
 - **AI 卡片流式输出**：回复以钉钉卡片形式实时流式显示
 - **Markdown 回复**：支持格式化的 Markdown 消息
 - **群聊 @触发**：群聊中 @机器人才响应，不打扰正常沟通
@@ -37,7 +37,18 @@
 openclaw plugins install @soimy/dingtalk
 ```
 
-通过 `openclaw channels add` 或手动编辑配置文件，填入 Client ID 和 Client Secret。
+安装后需将插件加入安全白名单。编辑 `~/.openclaw/openclaw.json`，添加：
+
+```json
+{
+  "plugins": {
+    "enabled": true,
+    "allow": ["@soimy/dingtalk"]
+  }
+}
+```
+
+通过 `openclaw onboard` 交互式引导或手动编辑 `~/.openclaw/openclaw.json` 的 `channels` 配置，填入 Client ID 和 Client Secret。
 
 ### 第五步：启动并测试
 
