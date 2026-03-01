@@ -101,19 +101,28 @@ send me a report through Feishu.
 对于内容创意部分，直接写完整草稿，不要只列标题。
 ```
 
+> **提示**：抓取 36kr、少数派等中文网站需要 OpenClaw 具备网页浏览或搜索能力。如果你的 agent 无法访问这些网站，请确认已安装浏览器技能或网页搜索技能。
+
 ### 定时任务（cron）设置
 
 OpenClaw 支持用自然语言创建定时任务：
 
 ```text
-帮我创建一个定时任务：每个工作日早上 7:30，生成早间简报并发到飞书。
+帮我创建一个定时任务：每个工作日早上 7:30（比原版 8:00 提前，适配国内上班时间），生成早间简报并发到飞书。
 时区设为 Asia/Shanghai。
 ```
 
 也可以用命令行精确控制：
 
 ```bash
-openclaw cron add --cron "30 7 * * 1-5" --tz "Asia/Shanghai" --message "生成今日早间简报并发送" --channel feishu
+openclaw cron add \
+  --name "morning-brief-cn" \
+  --cron "30 7 * * 1-5" \
+  --tz "Asia/Shanghai" \
+  --session isolated \
+  --message "生成今日早间简报并发送到飞书" \
+  --announce \
+  --channel feishu
 ```
 
 ## 参考来源

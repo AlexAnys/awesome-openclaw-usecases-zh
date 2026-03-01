@@ -16,7 +16,7 @@
 
 | 方案 | 插件 | 特点 |
 |------|------|------|
-| openclaw-china 套件 | `@openclaw-china/wecom-app` | 官方中国社区出品，一站式配置 |
+| openclaw-china 套件 | `@openclaw-china/wecom-app` | 社区维护的中国 IM 插件集合，一站式配置 |
 | sunnoy 插件 | `@sunnoy/wecom` | 功能更丰富，支持动态 Agent 管理、群聊集成、指令白名单 |
 
 两种方案都经过社区验证，选哪个看你的需求：只做基础对话选前者，需要群聊管理等高级功能选后者。
@@ -38,7 +38,7 @@
 在应用设置中配置"接收消息"的回调 URL，格式一般为：
 
 ```
-http://<你的公网IP>:18789/wecom/app
+http://<你的公网IP>:18789/wecom-app
 ```
 
 如果没有公网 IP，可以使用内网穿透工具（如 frp、ngrok）。
@@ -69,13 +69,17 @@ openclaw plugins install @openclaw-china/wecom-app
 }
 ```
 
+> **安全提醒**：请勿将真实凭证直接写入配置文件并提交到版本控制。建议使用环境变量：将 Token、AES Key 等敏感信息存入 `.env` 文件，并确保 `.env` 已加入 `.gitignore`。
+
 **方案 B：sunnoy 插件**
 
 ```bash
 openclaw plugins install @sunnoy/wecom
 ```
 
-按插件文档配置 channels 即可。
+按 [插件文档](https://github.com/sunnoy/openclaw-plugin-wecom) 配置 channels。该插件支持 Bot 模式和 App 模式，具体配置参数请参考仓库 README。
+
+> 安装第三方社区插件后，建议在 `plugins.allow` 中配置白名单（参考钉钉用例中的说明）。
 
 ### 第四步：启动并测试
 

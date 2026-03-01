@@ -21,7 +21,7 @@
 - [stock-daily-analysis-skill](https://github.com/chjm-ai/stock-daily-analysis-skill) —— LLM 驱动的每日分析，支持 DeepSeek/Gemini，适合想要 AI 研判的用户
 - [openclaw-stock-skill](https://github.com/molezzz/openclaw-stock-skill) —— 自然语言查询路由，支持 18 种查询类型
 
-所有技能底层都依赖 [AkShare](https://github.com/akfamily/akshare)（10,000+ stars），一个成熟的中国金融数据 Python 库。
+所有技能底层都依赖 [AkShare](https://github.com/akfamily/akshare)（16,000+ stars），一个成熟的中国金融数据 Python 库。
 
 可选增强：
 
@@ -41,6 +41,9 @@ pip install akshare matplotlib
 # 克隆技能到本地
 git clone https://github.com/DAnonyvinciT/akshare-stock-skill.git
 cp -r akshare-stock-skill ~/.openclaw/workspace/skills/
+# 注意：技能目录路径取决于你的 OpenClaw workspace 配置，
+# 默认为 ~/.openclaw/workspace/skills/，首次使用时在对话中
+# 说"查看已安装技能"确认加载成功
 ```
 
 2. 直接用自然语言查询：
@@ -82,7 +85,14 @@ cp -r stock-daily-analysis-skill ~/.openclaw/workspace/skills/
 3. 设置定时任务：
 
 ```bash
-openclaw cron add --cron "30 8 * * 1-5" --tz "Asia/Shanghai" --message "执行今日股票分析并推送" --channel feishu
+openclaw cron add \
+  --name "daily-a-share-analysis" \
+  --cron "30 8 * * 1-5" \
+  --tz "Asia/Shanghai" \
+  --session isolated \
+  --message "执行今日股票分析并推送" \
+  --announce \
+  --channel feishu
 ```
 
 ### 方案三：MCP 协议深度分析
@@ -95,7 +105,21 @@ cd stock-mcp
 pip install -r requirements.txt
 ```
 
-在 `openclaw.json` 中添加 MCP 服务器配置后，即可使用深度研究功能：
+在 `openclaw.json` 中添加 MCP 服务器配置，例如：
+
+```json
+{
+  "mcpServers": {
+    "stock-mcp": {
+      "command": "python",
+      "args": ["-m", "stock_mcp.server"],
+      "cwd": "/path/to/stock-mcp"
+    }
+  }
+}
+```
+
+配置完成后即可使用深度研究功能：
 
 ```text
 对比分析宁德时代和比亚迪最近一个季度的财务健康度，
@@ -104,7 +128,7 @@ pip install -r requirements.txt
 
 ## 实用建议
 
-- **数据源选择**：AkShare 免费且覆盖全面，日常分析足够。如需更高频数据（分钟级），可申请 Tushare Pro 积分
+- **数据源选择**：AkShare 免费且覆盖全面，日常分析足够。如需更高频数据（分钟级），可申请 Tushare Pro 积分（API key 通过环境变量 `TUSHARE_TOKEN` 传递，不要硬编码在配置文件中）
 - **AI 模型推荐**：DeepSeek 对中文金融文本理解好且国内访问稳定，是首选；也可用 Gemini 或 Claude
 - **云端部署**：如果需要 24 小时盯盘，推荐部署到阿里云/腾讯云轻量服务器（月费几十元），配合 cron 实现全自动
 - **K 线图导出**：akshare-stock-skill 和 openclaw-stock-skill 都支持生成 K 线图片，可直接在 IM 消息中查看

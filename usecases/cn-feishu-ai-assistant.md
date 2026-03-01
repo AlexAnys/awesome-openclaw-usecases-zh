@@ -15,11 +15,11 @@
 
 ## 所需技能
 
-使用 OpenClaw 2026.2+ 版本内置的飞书官方插件。无需额外安装技能。
+使用 OpenClaw 2026.2+ 版本内置的飞书官方渠道插件，基础消息功能无需额外安装。进阶的文档自动化技能需单独安装（见下方"进阶"章节）。
 
 ## 如何设置
 
-完整的保姆级教程请参考 [feishu-openclaw 配置指南](https://github.com/AlexAnys/openclaw-feishu)，以下是核心步骤概要（约 15-20 分钟）：
+完整的保姆级教程请参考 [openclaw-feishu 配置指南](https://github.com/AlexAnys/openclaw-feishu)，以下是核心步骤概要（约 15-20 分钟）：
 
 ### 第一步：创建飞书应用
 
