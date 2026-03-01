@@ -125,7 +125,7 @@
 | [办公自动化套件](usecases/cn-office-automation.md) | 邮件管理、文件整理、会议纪要、周报生成，支持 163/QQ/Outlook | ⭐⭐ |
 | [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
 | [全网比价助手](usecases/cn-ecommerce-price-assistant.md) | 跨淘宝/京东/拼多多/抖音/快手一句话比价 | ⭐ |
-| [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 从变成专业分工、稳定迭代的超级个体系统 | ⭐⭐⭐ |
+| [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
 
 ---
 
