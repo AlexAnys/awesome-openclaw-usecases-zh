@@ -20,8 +20,10 @@
 
 ## 如何设置
 
-1. 安装技能：
+1. 克隆项目并安装依赖：
 ```bash
+git clone https://github.com/white0dew/XiaohongshuSkills.git
+cd XiaohongshuSkills
 pip install -r requirements.txt
 ```
 
