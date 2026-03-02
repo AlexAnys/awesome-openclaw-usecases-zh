@@ -192,6 +192,7 @@
 |------|------|:---:|
 | [个人知识库 (RAG)](usecases/knowledge-base-rag.md) | 把 URL、推文和文章拖入聊天，构建可语义搜索的知识库 | ⭐⭐ |
 | [AI 财报追踪器](usecases/earnings-tracker.md) | 追踪科技/AI 公司财报，自动化预览、提醒和详细摘要 | ⭐⭐ |
+| [NOVA 三层记忆系统](usecases/nova-memory-system.md) | 零依赖纯文件系统的 AI 记忆架构，让 AI 真正记住一切 | ⭐⭐ |
 | [语义记忆搜索](usecases/semantic-memory-search.md) | 为 OpenClaw 记忆文件添加向量驱动的语义搜索 | ⭐⭐ |
 | [市场研究与产品工厂](usecases/market-research-product-factory.md) | 从 Reddit 和 X 挖掘真实痛点，让 AI 构建解决方案 MVP | ⭐⭐⭐ |
 
