@@ -1,5 +1,7 @@
 # 自主教育游戏开发流水线
 
+> 翻译自 [awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases)，含国内适配（微信小游戏 / Cocos Creator / TapTap）。
+
 一位老派 LAN 玩家父亲，想为女儿们打造一个安全、无广告、高质量的游戏门户。现有网站充斥着垃圾信息、弹窗广告和欺骗性按钮（暗黑模式），连三岁的孩子都会被误导点击。
 
 ## 痛点
