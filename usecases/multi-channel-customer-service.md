@@ -105,11 +105,9 @@
 
 ### P0 核心渠道：企业微信客服 API（已验证可行）
 
-OpenClaw 社区已有成熟的企业微信插件生态：
+企业微信开放平台提供完整的客服消息 API，支持消息接收、主动回复和被动回复。本案例库已有详细的企业微信接入教程：
 
-- [openclaw-plugin-wecom](https://github.com/sunnoy/openclaw-plugin-wecom) — 支持多机器人、流式输出
-- [openclaw-wechat](https://github.com/dingxiang-me/OpenClaw-Wechat) — 企业微信自建应用 + 个人微信桥接
-- [openclaw-china](https://github.com/BytePioneer-AI/openclaw-china) — 中国生态插件合集
+**前置条件**：参考 [企业微信 AI 助手](cn-wecom-ai-assistant.md) 完成基础接入。
 
 **配置要点**：
 
@@ -129,8 +127,6 @@ OpenClaw 社区已有成熟的企业微信插件生态：
 - 客户最后沟通后 48 小时内才能发消息
 - 欢迎语每小时最多触发一次
 
-**参考实现**：[ChatGPT-On-CS](https://github.com/cs-lazy-tools/ChatGPT-On-CS)（开源 AGPL-3.0），支持抖音等多平台客服自动回复。
-
 ### P1 扩展渠道：小红书私信通（理论可行，需验证）
 
 小红书官方提供一站式线索经营平台[私信通](https://sxt.xiaohongshu.com/)。
@@ -139,20 +135,14 @@ OpenClaw 社区已有成熟的企业微信插件生态：
 
 - 需已认证的企业号 + 聚光平台认证
 - 蓝 V 每日限 20 个陌生人主动消息，每人最多 3 条
-- 语聚 AI 已成为首批接入的第三方客服工具
 
 ### 暂不可行：美团/大众点评评价回复
 
 美团开放平台支持查询评价，但评价自动回复 API 未公开。不满足"真实跑通"准入门槛，暂不收录。
 
-### 已有统一多渠道参考方案
+### 多渠道参考实现
 
-如果需要同时覆盖多个国内渠道，可参考以下已验证的方案：
-
-- **语聚 AI**（yuju-ai.com）：商业 SaaS，已支持抖音/小红书/微信/快手/企微/飞书/钉钉
-- **ChatGPT-On-CS**（开源 AGPL-3.0）：支持微信/拼多多/千牛/B 站/抖音/小红书/知乎
-
-这些方案验证了多渠道客服的技术可行性，可作为 OpenClaw 集成的参考。
+- **[ChatGPT-On-CS](https://github.com/cs-lazy-tools/ChatGPT-On-CS)**（开源 AGPL-3.0）：已支持微信/拼多多/千牛/B 站/抖音/小红书/知乎等多平台客服自动回复，可作为 OpenClaw 集成的技术参考
 
 ### 安全提醒
 
