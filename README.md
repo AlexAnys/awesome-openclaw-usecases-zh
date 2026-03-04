@@ -129,6 +129,8 @@
 | [办公自动化套件](usecases/cn-office-automation.md) | 邮件管理、文件整理、会议纪要、周报生成，支持 163/QQ/Outlook | ⭐⭐ |
 | [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
+| [播客制作流水线](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（小宇宙/喜马拉雅/B站适配） | ⭐⭐ |
+| [会议纪要与待办自动化](usecases/meeting-notes-action-items.md) | 会议转录自动生成纪要并创建任务（飞书妙记/腾讯会议/钉钉适配） | ⭐⭐ |
 
 ---
 
@@ -152,7 +154,6 @@
 | [目标驱动的自主任务](usecases/overnight-mini-app-builder.md) | 告诉 AI 你的目标，它自动拆解并每天执行，还能一夜之间造出迷你应用 | ⭐⭐ |
 | [YouTube 内容流水线](usecases/youtube-content-pipeline.md) | 为 YouTube 频道自动化视频创意发掘、研究和追踪 | ⭐⭐⭐ |
 | [多智能体内容工厂](usecases/content-factory.md) | 在 Discord 中运行研究、写作、设计三个智能体组成的内容流水线 | ⭐⭐⭐ |
-| [播客制作流水线](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（国内适配） | ⭐⭐ |
 
 ## 基础设施与 DevOps
 
@@ -184,7 +185,6 @@
 | [动态仪表板](usecases/dynamic-dashboard.md) | 实时仪表板，子智能体并行从 API、数据库和社交媒体获取数据 | ⭐⭐⭐ |
 | [自主项目管理](usecases/autonomous-project-management.md) | 使用 STATE.yaml 模式协调多智能体项目，无需人工编排 | ⭐⭐⭐ |
 | [多智能体专业团队](usecases/multi-agent-team.md) | 4 个专业 AI 智能体（战略+开发+营销+商务）作为你的虚拟团队 | ⭐⭐⭐ |
-| [会议纪要与待办自动化](usecases/meeting-notes-action-items.md) | 会议转录自动生成纪要并创建任务（国内适配） | ⭐⭐ |
 
 ## 研究与学习
 
