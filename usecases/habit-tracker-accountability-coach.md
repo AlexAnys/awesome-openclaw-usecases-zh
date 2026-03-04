@@ -1,5 +1,7 @@
 # 习惯追踪与自律教练
 
+> 翻译自 [awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases)，含国内适配（钉钉 / 飞书 / 企业微信通道）。
+
 你试过各种习惯打卡 App——小日常、Forest、番茄 Todo……它们都能用一周，然后你就不再打开了。问题不在 App，而在于追踪习惯是**被动的**。如果你的智能体主动联系你、问你今天过得怎么样、并根据你是在坚持还是在滑落来调整沟通方式呢？
 
 这个用例把 OpenClaw 变成一个**主动的自律教练**，每天通过 Telegram 或短信向你签到。
