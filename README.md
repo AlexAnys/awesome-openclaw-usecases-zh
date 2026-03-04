@@ -36,14 +36,16 @@
 
 </details>
 
-> **2026.3.1 更新**：新增 9 个中国特色用例——飞书、钉钉、企业微信三大 IM 入口全覆盖，以及小红书自动化、办公套件等场景。详见 [中国特色用例](#-中国特色用例)。
+> **2026.3.4 更新**：中国特色用例扩充至 13 个——新增 A 股财报追踪、多渠道客服、创意验证器等国际用例的国内适配，按场景分类展示。详见 [中国特色用例](#-中国特色用例)。
+>
+> **2026.3.1 更新**：新增 9 个中国特色用例——飞书、钉钉、企业微信三大 IM 入口全覆盖，以及小红书自动化、办公套件等场景。
 
 ---
 
 ## 🗂 目录
 
 - [新手入门指南](#-新手入门指南)
-- [中国特色用例](#-中国特色用例) — 飞书、钉钉、企业微信、小红书等国内工具场景
+- [中国特色用例](#-中国特色用例) — 适配国内生态的精选用例（飞书、钉钉、企业微信、AKShare 等）
 - [社交媒体](#社交媒体) — 自动获取 Reddit、YouTube、X 等平台的精选内容
 - [创意与构建](#创意与构建) — 让 AI 帮你创作内容、构建应用
 - [基础设施与 DevOps](#基础设施与-devops) — 服务器自愈、工作流自动化
@@ -118,18 +120,43 @@
 
 ## 🇨🇳 中国特色用例
 
-> 专为中国工具生态设计，使用飞书、小红书、淘宝/京东等国内平台
+> 专为中国工具生态设计或适配的用例，使用飞书、钉钉、企业微信、小红书等国内平台。标注"适配"的用例在国际版基础上增加了国内方案。
+
+**IM 接入**
 
 | 名称 | 描述 | 难度 |
 |------|------|:---:|
 | [飞书 AI 助手](usecases/cn-feishu-ai-assistant.md) | 把 OpenClaw 部署为飞书机器人，在对话中直接触发 AI 任务，支持文档自动化 | ⭐⭐ |
 | [钉钉 AI 助手](usecases/cn-dingtalk-ai-assistant.md) | 把 OpenClaw 部署为钉钉机器人，Stream 模式无需公网 IP | ⭐⭐ |
 | [企业微信 AI 助手](usecases/cn-wecom-ai-assistant.md) | 在企业微信中使用 AI，通过微信插件让个人微信也能用 | ⭐⭐ |
-| [早间简报（中国适配）](usecases/custom-morning-brief.md) | 每日定时推送简报到飞书/钉钉，支持中文新闻源和 cron 配置 | ⭐ |
+
+**生产力与办公**
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
+| [早间简报（适配）](usecases/custom-morning-brief.md) | 每日定时推送简报到飞书/钉钉，支持中文新闻源和 cron 配置 | ⭐ |
 | [办公自动化套件](usecases/cn-office-automation.md) | 邮件管理、文件整理、会议纪要、周报生成，支持 163/QQ/Outlook | ⭐⭐ |
+| [会议纪要与待办自动化（适配）](usecases/meeting-notes-action-items.md) | 会议转录自动生成纪要并创建任务（飞书妙记/腾讯会议/钉钉） | ⭐⭐ |
+| [多渠道 AI 客户服务（适配）](usecases/multi-channel-customer-service.md) | 企业微信/抖音/小红书多渠道客服自动化 | ⭐⭐⭐ |
+
+**内容创作**
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
 | [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
-| [播客制作流水线](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（小宇宙/喜马拉雅/B站适配） | ⭐⭐ |
-| [会议纪要与待办自动化](usecases/meeting-notes-action-items.md) | 会议转录自动生成纪要并创建任务（飞书妙记/腾讯会议/钉钉适配） | ⭐⭐ |
+| [播客制作流水线（适配）](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（小宇宙/喜马拉雅/B站） | ⭐⭐ |
+
+**研究与金融**
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
+| [AI 财报追踪器（适配）](usecases/earnings-tracker.md) | A 股财报追踪，AKShare 免费数据源 + 业绩预告/快报自动化 | ⭐⭐ |
+| [开发前创意验证器（适配）](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品（百度指数/微信指数/V2EX/少数派） | ⭐⭐ |
+
+**高级场景**
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
 
 ---
@@ -170,7 +197,7 @@
 
 | 名称 | 描述 | 难度 |
 |------|------|:---:|
-| [定制早间简报](usecases/custom-morning-brief.md) | 每天醒来就有专属简报——新闻、任务、内容草稿、AI 推荐操作 | ⭐ |
+| [定制早间简报](usecases/custom-morning-brief.md) | 每天醒来就有专属简报——新闻、任务、内容草稿、AI 推荐操作（国内适配） | ⭐ |
 | [收件箱整理](usecases/inbox-declutter.md) | 自动总结新闻通讯并发送摘要邮件，告别邮件堆积 | ⭐ |
 | [第二大脑](usecases/second-brain.md) | 随手发消息记住一切，在自定义仪表板中随时搜索 | ⭐ |
 | [个人 CRM](usecases/personal-crm.md) | 自动从邮件和日历中发现并追踪联系人，支持自然语言查询 | ⭐⭐ |
@@ -179,7 +206,7 @@
 | [多渠道个人助理](usecases/multi-channel-assistant.md) | 一个 AI 助理统管 Telegram、Slack、邮件和日历 | ⭐⭐ |
 | [家庭日历与家务助理](usecases/family-calendar-household-assistant.md) | 聚合所有家庭日历到早间简报，监控消息获取预约，管理家庭库存 | ⭐⭐ |
 | [Todoist 任务管理器](usecases/todoist-task-manager.md) | 将 AI 推理和进度日志同步到 Todoist，实时看到智能体在做什么 | ⭐⭐ |
-| [多渠道 AI 客户服务](usecases/multi-channel-customer-service.md) | WhatsApp + Instagram + 邮件 + Google 评价统一到 AI 收件箱 | ⭐⭐⭐ |
+| [多渠道 AI 客户服务](usecases/multi-channel-customer-service.md) | WhatsApp + Instagram + 邮件 + Google 评价统一到 AI 收件箱（国内适配） | ⭐⭐⭐ |
 | [活动嘉宾确认](usecases/event-guest-confirmation.md) | 自动逐一呼叫嘉宾确认出席、收集备注并编译摘要 | ⭐⭐ |
 | [项目状态管理](usecases/project-state-management.md) | 事件驱动的项目追踪，自动捕获上下文，取代静态看板 | ⭐⭐⭐ |
 | [动态仪表板](usecases/dynamic-dashboard.md) | 实时仪表板，子智能体并行从 API、数据库和社交媒体获取数据 | ⭐⭐⭐ |
@@ -193,7 +220,7 @@
 | 名称 | 描述 | 难度 |
 |------|------|:---:|
 | [个人知识库 (RAG)](usecases/knowledge-base-rag.md) | 把 URL、推文和文章拖入聊天，构建可语义搜索的知识库 | ⭐⭐ |
-| [AI 财报追踪器](usecases/earnings-tracker.md) | 追踪科技/AI 公司财报，自动化预览、提醒和详细摘要 | ⭐⭐ |
+| [AI 财报追踪器](usecases/earnings-tracker.md) | 追踪科技/AI 公司财报，自动化预览、提醒和详细摘要（国内适配） | ⭐⭐ |
 | [语义记忆搜索](usecases/semantic-memory-search.md) | 为 OpenClaw 记忆文件添加向量驱动的语义搜索 | ⭐⭐ |
 | [市场研究与产品工厂](usecases/market-research-product-factory.md) | 从 Reddit 和 X 挖掘真实痛点，让 AI 构建解决方案 MVP | ⭐⭐⭐ |
 | [开发前创意验证器](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品，返回竞争度评分（国内适配） | ⭐⭐ |
