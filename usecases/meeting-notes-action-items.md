@@ -1,5 +1,7 @@
 # 会议纪要与待办事项自动化
 
+> 翻译自 [awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases)，含国内适配（飞书妙记 / 腾讯会议 / 钉钉）。
+
 刚开完一场 45 分钟的团队会议，你需要写会议纪要、提取行动项，然后分别录入 Jira、Linear 或待办清单——全靠手动。等你处理完，下一场会议已经开始了。如果在转录文本落地的那一刻，你的智能体就自动搞定这一切呢？
 
 这个用例把任何会议转录文本变成结构化纪要，并自动在项目管理工具中创建对应的任务。
@@ -108,7 +110,7 @@ When writing meeting summaries, always use this structure:
 
 | 原版工具 | 国内替代 | OpenClaw 技能 |
 |---------|---------|---------------|
-| Jira / Linear | **飞书项目（Meego）** | 通过 [feishu-doc](https://playbooks.com/skills/openclaw/skills/feishu-doc) 写入飞书文档，或使用飞书项目 API |
+| Jira / Linear | **飞书项目（Meego）** | 通过 [feishu-doc](https://playbooks.com/skills/openclaw/openclaw/feishu-doc) 写入飞书文档，或使用飞书项目 API |
 | Todoist | **滴答清单** | [ticktick-api-skill](https://playbooks.com/skills/openclaw/skills/ticktick-api-skill) |
 | Notion | **飞书文档 / 钉钉文档** | [feishu-doc](https://playbooks.com/skills/openclaw/openclaw/feishu-doc) |
 | Slack / Discord | **飞书群聊 / 钉钉群聊** | 通过飞书/钉钉渠道插件直接发送 |
