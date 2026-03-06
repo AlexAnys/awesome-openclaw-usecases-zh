@@ -133,6 +133,7 @@
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
 | [Agent Swarm 一人开发团队（适配）](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队，全自动化开发流水线 | ⭐⭐⭐ |
 | [电商多 Agent 架构](usecases/cn-ecommerce-multi-agent.md) | 多 Agent 绑定飞书群实现电商角色分工，4 个 Skill 覆盖销售/库存/客户全场景 | ⭐⭐ |
+| [A 股每日行情监控](usecases/cn-a-share-monitor.md) | 盘前简报 + 盘后复盘 + 板块资金流向，AKShare/MCP 数据源 | ⭐⭐ |
 
 ---
 
