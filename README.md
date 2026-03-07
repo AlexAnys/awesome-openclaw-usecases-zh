@@ -43,7 +43,7 @@
 ## 🗂 目录
 
 - [新手入门指南](#-新手入门指南)
-- [中国特色用例](#-中国特色用例) — 适配国内生态的精选用例（飞书、钉钉、企业微信、AKShare 等）
+- [中国特色用例](#-中国特色用例) — 适配国内生态的精选用例（飞书、钉钉、企业微信、A 股监控等）
 - [社交媒体](#社交媒体) — 自动获取 Reddit、YouTube、X 等平台的精选内容
 - [创意与构建](#创意与构建) — 让 AI 帮你创作内容、构建应用
 - [基础设施与 DevOps](#基础设施与-devops) — 服务器自愈、工作流自动化
@@ -128,6 +128,7 @@
 | [多渠道 AI 客户服务（适配）](usecases/multi-channel-customer-service.md) | 企业微信/抖音/小红书多渠道客服自动化 | ⭐⭐⭐ |
 | [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
 | [播客制作流水线（适配）](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（小宇宙/喜马拉雅/B站） | ⭐⭐ |
+| [A 股每日行情监控](usecases/cn-a-share-monitor.md) | 盘前简报 + 盘后复盘 + 板块资金流向，AKShare/MCP 数据源 | ⭐⭐ |
 | [AI 财报追踪器（适配）](usecases/earnings-tracker.md) | A 股财报追踪，AKShare 免费数据源 + 业绩预告/快报自动化 | ⭐⭐ |
 | [开发前创意验证器（适配）](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品（百度指数/微信指数/V2EX/少数派） | ⭐⭐ |
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
