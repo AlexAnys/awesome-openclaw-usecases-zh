@@ -43,6 +43,8 @@
 ## 如何设置
 
 > 以下步骤适用于 **OpenClaw 内置插件**（方案 b）。如果选择飞书官方插件（方案 a），请参考 [飞书官方插件安装指南](https://github.com/AlexAnys/openclaw-feishu/blob/main/docs/feishu-official-plugin.md)。
+>
+> ⚠️ **已知问题（2026-03-09，影响 OpenClaw ≥ 2026.3.x）**：飞书官方安装工具 `feishu-plugin-onboard` 的版本检查存在 bug（[openclaw-feishu#59](https://github.com/AlexAnys/openclaw-feishu/issues/59)），会误报"版本过低"。**替代方式**：跳过 onboard CLI，直接运行 `openclaw plugins install @larksuiteoapi/feishu-openclaw-plugin`，然后手动配置 appId/appSecret 即可。详见安装指南。
 
 完整的保姆级教程请参考 [openclaw-feishu 配置指南](https://github.com/AlexAnys/openclaw-feishu)，以下是核心步骤概要（约 15-20 分钟）：
 
