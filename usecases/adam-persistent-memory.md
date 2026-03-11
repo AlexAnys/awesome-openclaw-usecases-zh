@@ -25,8 +25,8 @@ Adam Framework 在架构层面同时解决两个问题：**跨会话失忆** 和
 | 层级 | 功能 | 说明 |
 |------|------|------|
 | **Layer 1：Vault 注入** | 身份文件注入 | SENTINEL 在每次启动时加载 SOUL.md 和 CORE_MEMORY.md，智能体醒来就知道自己是谁 |
-| **Layer 2：会话检索** | 中途记忆搜索 | 混合搜索（70% 向量 + 30% 文本），通过 memory_search / memory_get 工具在对话中实时检索 |
-| **Layer 3：神经图谱** | 关联记忆 | nmem_context 提供联想式回忆，12,393 个神经元、40,532 个突触的知识图谱 |
+| **Layer 2：会话检索** | 中途记忆搜索 | 混合搜索，通过 memory_search / memory_get 工具在对话中实时检索 |
+| **Layer 3：神经图谱** | 关联记忆 | nmem_context 提供联想式回忆，7,219 个神经元、29,291 个突触的知识图谱 |
 | **Layer 4：夜间整合** | 睡眠周期 | 使用 Gemini（或国内 API 替代）在你睡觉时将日志合并到 CORE_MEMORY.md |
 | **Layer 5：一致性监控** | 漂移检测 | 每 5 分钟检查 scratchpad 使用情况，检测到漂移时自动重新锚定 |
 
@@ -142,6 +142,8 @@ launchctl load ~/Library/LaunchAgents/com.adamframework.sentinel.plist
 - **睡眠周期不是必须的**：如果不想依赖外部 API，可以手动维护 CORE_MEMORY.md
 - **一致性监控解决的是隐性问题**：长对话中的推理漂移很难被察觉，Layer 5 每 5 分钟自动检测并纠正
 
+> 如果只需要对现有 Markdown 文件添加语义搜索能力，可参考更轻量的 [语义记忆搜索](semantic-memory-search.md) 方案。Adam Framework 提供完整的 5 层记忆架构，适合需要跨会话身份一致性和自动记忆整合的深度用户。
+
 ## 中国用户适配
 
 ### 核心挑战
@@ -180,7 +182,7 @@ client = OpenAI(
 
 def reconcile_logs(daily_log: str, core_memory: str) -> str:
     response = client.chat.completions.create(
-        model="kimi-k2.5",
+        model="kimi-k2.5",  # 请通过 GET /v1/models 确认当前可用模型 ID
         messages=[
             {"role": "system", "content": "你是一个记忆整合助手。将以下日志内容合并到核心记忆中，保留关键决策、项目状态和重要事实。删除冗余信息。输出更新后的核心记忆内容。"},
             {"role": "user", "content": f"当前核心记忆：\n{core_memory}\n\n今日日志：\n{daily_log}"}
@@ -339,3 +341,7 @@ Adam Framework 的 Vault 记忆系统可以与国内 IM 平台结合使用，让
 - [阿里云百炼](https://dashscope.aliyun.com/) — 通义千问 API 接入
 - [智谱 AI 开放平台](https://open.bigmodel.cn/) — GLM-4 API 接入
 - [Ollama](https://ollama.com/) — 本地运行开源模型
+
+---
+
+**原文链接**：[English Version](https://github.com/hesamsheikh/awesome-openclaw-usecases/pull/56)
