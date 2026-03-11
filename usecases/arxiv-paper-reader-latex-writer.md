@@ -1,6 +1,8 @@
 # arXiv 论文阅读与 LaTeX 论文写作
 
 > 含国内适配：中文 LaTeX 配置 / Docker 国内镜像 / 高校论文模板 / 在线平台对比
+>
+> 📝 本文档合并了上游的 arxiv-paper-reader 和 latex-paper-writing 两个用例，因二者共享 Prismer 工具链且适配内容高度重叠。
 
 读 arXiv 论文意味着下载 PDF、在多篇论文之间频繁切换丢失上下文、艰难解读密集的 LaTeX 公式。写论文意味着安装动辄几个 GB 的 TeX Live、调试编译错误、在编辑器和 PDF 预览之间来回切换。如果你的智能体能在对话中帮你完成论文阅读、分析、写作和编译的全流程呢？
 
@@ -194,15 +196,14 @@ Always run 2 passes for cross-references.
 
 Prismer 的 Docker 镜像包含完整的 TeX Live 环境，镜像体积较大。国内用户拉取镜像时建议配置 Docker 镜像加速：
 
-**配置 Docker 镜像加速器**：
+配置 Docker 镜像加速器（国内 Docker Hub 镜像站变化较快，请搜索“Docker 国内镜像加速”获取最新可用地址）：
 
 编辑 `/etc/docker/daemon.json`（不存在则新建）：
 
 ```json
 {
   "registry-mirrors": [
-    "https://docker-0.unsee.tech",
-    "https://docker.xuanyuan.me"
+    "https://your-mirror.example.com"
   ]
 }
 ```
@@ -222,6 +223,8 @@ sudo systemctl restart docker
 tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
 ```
 
+> 💡 也可使用阿里云容器镜像服务（需注册账号获取专属加速地址）。
+>
 > **macOS 用户**：macOS 版 Docker Desktop 的镜像加速在 Docker Desktop > Settings > Docker Engine 中配置，添加相同的 `registry-mirrors` 字段即可。
 
 ### 国内论文数据库说明
@@ -242,9 +245,11 @@ tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texliv
 
 如果不想使用 Docker 部署本地 LaTeX 环境，以下是国内可用的在线 LaTeX 编辑平台：
 
+> 以下为国内可用的在线 LaTeX 平台，仅供参考，非推荐。请根据自身需求选择。
+
 | 平台 | 特点 | 费用 | 适用场景 |
 |------|------|------|---------|
-| [Overleaf](https://www.overleaf.com) 国际版 | 功能最全面，模板生态最丰富 | 免费版有编译时长限制；付费 $199/年 | 国际期刊投稿、与海外合作者协作 |
+| [Overleaf](https://www.overleaf.com) 国际版 | 功能最全面，模板生态最丰富 | 免费版有编译时长限制；付费版（价格见 [Overleaf 官网](https://www.overleaf.com/user/subscription/plans)） | 国际期刊投稿、与海外合作者协作 |
 | [TeXPage](https://www.texpage.com) | 国内团队开发，端到端加密，服务器在国内 | 付费 | 对数据安全和网络延迟敏感的场景 |
 | [LoongTeX](https://www.loongtex.com) | 国产平台，AI 辅助校对，支持异步协作 | 提供免费版 | 国内高校团队协作 |
 
@@ -269,3 +274,9 @@ tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texliv
 - [清华 CTAN 镜像](https://mirrors.tuna.tsinghua.edu.cn/CTAN/) -- TeX Live 国内镜像源
 - [TeXPage](https://www.texpage.com) -- 国内 LaTeX 在线编辑平台
 - [LoongTeX](https://www.loongtex.com) -- 国产 LaTeX 协作平台
+
+---
+
+**原文链接**：
+- [arXiv Paper Reader (English)](https://github.com/hesamsheikh/awesome-openclaw-usecases/pull/53)
+- [LaTeX Paper Writing (English)](https://github.com/hesamsheikh/awesome-openclaw-usecases/pull/53)
