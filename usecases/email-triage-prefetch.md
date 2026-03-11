@@ -2,6 +2,8 @@
 
 > 含国内适配：QQ 企业邮箱 / 网易企业邮箱 / M365 世纪互联版
 
+> 与 [邮件收件箱清理](inbox-declutter.md) 的区别：inbox-declutter 侧重事后清理（分类、归档已有邮件），本用例侧重事中过滤（新邮件到达时智能分拣和优先级告警），并通过 Prefetch 架构实现 99% 的 token 成本削减。
+
 跨多个 Microsoft 365 租户的智能邮件监控，通过成本优化的预取（prefetch）架构将 token 消耗降低 99%，再由智能分拣决定哪些邮件值得提醒你——哪些可以等一等。
 
 ## 痛点
@@ -40,7 +42,7 @@ import subprocess, json, os, tempfile
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo  # Python 3.9+，自动处理夏令时
 
-CST = ZoneInfo("America/Chicago")
+CST = ZoneInfo("Asia/Shanghai")
 LOOKBACK = timedelta(minutes=35)  # 比 30 分钟间隔稍宽一些
 OUTPUT = "/tmp/openclaw/email-monitor-pending.json"
 
@@ -103,7 +105,7 @@ except (OSError, IOError) as e:
 
 **系统 crontab**（每 30 分钟运行一次，早 8 点到晚 11 点）：
 ```bash
-CRON_TZ=America/Chicago
+CRON_TZ=Asia/Shanghai
 */30 8-23 * * * /usr/bin/python3 /path/to/email-prefetch.py >> /tmp/openclaw/email-monitor.log 2>&1
 ```
 
@@ -281,18 +283,21 @@ def fetch_emails():
             return emails_data
 
         for num in message_numbers[0].split()[-20:]:  # 最多取最近 20 封
-            _, msg_data = mail.fetch(num, "(RFC822.HEADER BODY.PEEK[TEXT]<0.500>)")
+            _, msg_data = mail.fetch(num, "(RFC822.HEADER)")
             if not msg_data or not msg_data[0]:
                 continue
 
             raw_header = msg_data[0][1] if msg_data[0] else b""
             msg = email.message_from_bytes(raw_header)
 
+            # 注意：IMAP 不直接支持 bodyPreview，如需正文预览，
+            # 需额外 fetch BODY.PEEK[TEXT]<0.500> 并解析截取。
+            # 本方案仅基于标题和发件人分拣，跳过正文预览以节省带宽。
             emails_data.append({
                 "subject": decode_mime_header(msg.get("Subject", "")),
                 "from": decode_mime_header(msg.get("From", "")),
                 "receivedDateTime": msg.get("Date", ""),
-                "bodyPreview": ""  # IMAP 预览需从正文截取
+                "bodyPreview": ""
             })
     finally:
         mail.logout()
@@ -384,7 +389,7 @@ webhook 地址从环境变量 WECOM_WEBHOOK_URL 读取。
 - **IMAP 方案是最通用的选择**：腾讯、网易、阿里企业邮箱均支持标准 IMAP 协议，一套预取脚本稍作修改即可适配多个邮箱系统
 - **时区配置**：将预取脚本中的时区改为 `Asia/Shanghai`（CST +8），避免因时区差异遗漏或重复拉取邮件
 - **中文邮件头解码**：国内邮件的主题和发件人经常使用 MIME 编码（如 `=?UTF-8?B?...?=`），预取脚本中需加入解码逻辑（上方示例已包含）
-- **回复链标记差异**：国内邮件的回复链标记除了 `From:`、`-----Original` 外，还可能出现 `发件人：`、`原始邮件` 等中文标记，建议在 `strip_reply_chains` 中补充
+- **回复链标记差异**：国内邮件的回复链标记可能包含中文（如 `发件人：`、`原始邮件`），如需剥离，可在预取脚本的 `strip_reply_chains` 函数中添加相应正则
 
 > **安全提醒**：所有邮箱凭证（授权码、API 密钥、Webhook 地址）必须通过环境变量传递，绝不硬编码在脚本或配置文件中。
 
