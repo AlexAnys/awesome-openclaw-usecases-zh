@@ -65,12 +65,15 @@
 然后直接用自然语言查询个股信息：
 
 ```text
-帮我看一下 600519 贵州茅台的最新行情和技术指标。
+帮我看一下 SZ000333 美的集团的最新行情和技术指标。
 
-300750 宁德时代最近的财务数据怎么样？
+SH600519 贵州茅台最近的财务数据怎么样？
 ```
 
-> **注意**：MCP 服务提供 brief/medium/full 三个工具，专注于**单个股票**的基本信息、行情、财务和技术指标查询。大盘指数、板块排名、北向资金等全局数据需配合方案二（AKShare）使用。
+> **注意**：
+> - MCP 服务提供 brief/medium/full 三个工具，专注于**单个 A 股**的基本信息、行情、财务和技术指标查询。大盘指数、板块排名、北向资金等全局数据需配合方案二（AKShare）使用
+> - 股票代码需使用 `SH`/`SZ` 前缀格式（如 `SH600519`、`SZ000333`），LLM 通常能自动推断转换
+> - **仅支持 A 股**，港股（小米、腾讯、阿里等）不在覆盖范围内
 
 ### 方案二：AKShare + Python 沙箱
 
@@ -91,11 +94,15 @@ pip install akshare
 
 | 接口 | 用途 |
 |------|------|
-| `ak.stock_zh_a_spot_em()` | 全部 A 股实时行情 |
+| `ak.stock_zh_a_spot_em()` | 全部 A 股实时行情 ⚠️ |
 | `ak.stock_zh_a_hist()` | 个股历史日线数据 |
-| `ak.stock_board_industry_name_em()` | 行业板块列表 |
+| `ak.stock_zh_index_daily_em()` | 主要指数日线行情 |
+| `ak.stock_hk_hist()` | 港股个股历史行情 |
+| `ak.stock_board_industry_name_em()` | 行业板块列表 ⚠️ |
 | `ak.stock_hsgt_fund_flow_summary_em()` | 沪深港通资金流向汇总 |
 | `ak.stock_market_activity_legu()` | 涨跌家数/涨停跌停统计 |
+
+> ⚠️ 标记的接口底层依赖东方财富，从海外 IP 调用可能被拒绝连接。替代方案：实时行情可用 `stock_zh_a_hist` 取当日数据，指数可用 `stock_zh_index_daily_em`。
 
 ### 设置每日自动推送
 
@@ -119,7 +126,8 @@ pip install akshare
 ## 实用建议
 
 - **AKShare 是首选数据源**：免费、开源、接口全面。如果需要更高频数据（分钟级），可申请 Tushare Pro 积分（通过环境变量 `TUSHARE_TOKEN` 传入）
-- **海外服务器注意**：部分 AKShare 接口（如 `stock_zh_a_spot_em` 实时行情、`stock_board_industry_name_em` 板块数据）底层依赖东方财富，从海外 IP 调用可能被拒绝连接。建议部署在国内云服务器上，或使用 `stock_zh_a_hist` 等不受此限制的接口
+- **海外服务器注意**：部分 AKShare 接口（如 `stock_zh_a_spot_em`、`stock_zh_index_spot_em`、`stock_board_industry_name_em`）底层依赖东方财富，从海外 IP 调用会被拒绝连接。替代方案：个股用 `stock_zh_a_hist`、指数用 `stock_zh_index_daily_em`、港股用 `stock_hk_hist`。或直接部署在国内云服务器上
+- **港股覆盖**：小米、阿里巴巴、腾讯等港股不在 MCP 服务覆盖范围内，需通过 AKShare 的 `stock_hk_hist(symbol="01810")` 等接口获取
 - **MCP 方案更省心**：不需要自己写 Python，OpenClaw 通过 MCP 协议自动调用数据接口。注意 MCP 服务专注于个股查询，全局数据（大盘、板块、资金流向）仍需 AKShare
 - **云端部署保持在线**：如果需要每天准时推送，推荐部署到云服务器（阿里云/腾讯云轻量服务器，月费几十元），配合 cron 实现全自动
 - **不要依赖 AI 做交易决策**：当前 LLM 在金融决策上存在延迟、不稳定、不可解释等问题。把 OpenClaw 当作信息收集和整理工具，决策留给自己
