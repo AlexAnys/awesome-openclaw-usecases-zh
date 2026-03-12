@@ -36,7 +36,7 @@
 
 可选的 MCP 方案（免去写 Python 脚本）：
 
-- [mcp-cn-a-stock](https://github.com/elsejj/mcp-cn-a-stock)（400+ stars）—— 专门为 LLM 设计的 A 股数据 MCP 服务，OpenClaw 可直接调用
+- [mcp-cn-a-stock](https://github.com/elsejj/mcp-cn-a-stock)（400+ stars）—— 专门为 LLM 设计的 A 股数据 MCP 服务，提供个股基本信息、行情、财务和技术指标查询（brief/medium/full 三个工具），适合单个股票深度分析。大盘概览、板块排名、资金流向等全局数据仍需通过 AKShare 获取
 
 **推送层**：
 
@@ -46,39 +46,31 @@
 
 ### 方案一：MCP 服务 + 自然语言查询（推荐）
 
-无需写代码，通过 MCP 服务让 OpenClaw 直接获取 A 股数据：
+无需写代码，通过 MCP 服务让 OpenClaw 直接获取 A 股数据。该项目提供公共服务地址，无需本地安装：
 
-1. 安装 MCP 服务：
-
-```bash
-git clone https://github.com/elsejj/mcp-cn-a-stock.git
-cd mcp-cn-a-stock
-pip install -r requirements.txt
-```
-
-2. 在 OpenClaw 配置中添加 MCP 服务器：
+在 OpenClaw 配置中添加 MCP 服务器（使用公共 HTTP 服务）：
 
 ```json
 {
   "mcpServers": {
     "cn-a-stock": {
-      "command": "python",
-      "args": ["-m", "mcp_cn_a_stock"],
-      "cwd": "/path/to/mcp-cn-a-stock"
+      "url": "http://82.156.17.205/cnstock/mcp"
     }
   }
 }
 ```
 
-3. 直接用自然语言查询：
+> **本地部署**：如需自建服务，该项目依赖 Python ≥ 3.12 和 ta-lib C 库，通过 `python main.py --transport=http` 启动。详见 [项目 README](https://github.com/elsejj/mcp-cn-a-stock)。
+
+然后直接用自然语言查询个股信息：
 
 ```text
-今天 A 股大盘表现怎么样？上证和深证的涨跌情况。
+帮我看一下 600519 贵州茅台的最新行情和技术指标。
 
-半导体板块最近一周的走势如何？
-
-帮我看一下北向资金今天的流入流出情况。
+300750 宁德时代最近的财务数据怎么样？
 ```
+
+> **注意**：MCP 服务提供 brief/medium/full 三个工具，专注于**单个股票**的基本信息、行情、财务和技术指标查询。大盘指数、板块排名、北向资金等全局数据需配合方案二（AKShare）使用。
 
 ### 方案二：AKShare + Python 沙箱
 
@@ -102,7 +94,7 @@ pip install akshare
 | `ak.stock_zh_a_spot_em()` | 全部 A 股实时行情 |
 | `ak.stock_zh_a_hist()` | 个股历史日线数据 |
 | `ak.stock_board_industry_name_em()` | 行业板块列表 |
-| `ak.stock_hsgt_north_net_flow_in_em()` | 北向资金净流入 |
+| `ak.stock_hsgt_fund_flow_summary_em()` | 沪深港通资金流向汇总 |
 | `ak.stock_market_activity_legu()` | 涨跌家数/涨停跌停统计 |
 
 ### 设置每日自动推送
@@ -127,7 +119,8 @@ pip install akshare
 ## 实用建议
 
 - **AKShare 是首选数据源**：免费、开源、接口全面。如果需要更高频数据（分钟级），可申请 Tushare Pro 积分（通过环境变量 `TUSHARE_TOKEN` 传入）
-- **MCP 方案更省心**：不需要自己写 Python，OpenClaw 通过 MCP 协议自动调用数据接口
+- **海外服务器注意**：部分 AKShare 接口（如 `stock_zh_a_spot_em` 实时行情、`stock_board_industry_name_em` 板块数据）底层依赖东方财富，从海外 IP 调用可能被拒绝连接。建议部署在国内云服务器上，或使用 `stock_zh_a_hist` 等不受此限制的接口
+- **MCP 方案更省心**：不需要自己写 Python，OpenClaw 通过 MCP 协议自动调用数据接口。注意 MCP 服务专注于个股查询，全局数据（大盘、板块、资金流向）仍需 AKShare
 - **云端部署保持在线**：如果需要每天准时推送，推荐部署到云服务器（阿里云/腾讯云轻量服务器，月费几十元），配合 cron 实现全自动
 - **不要依赖 AI 做交易决策**：当前 LLM 在金融决策上存在延迟、不稳定、不可解释等问题。把 OpenClaw 当作信息收集和整理工具，决策留给自己
 - **注意接口频率**：AKShare 底层依赖公开网站数据，高频调用可能被限速。日常监控（每天几次）完全没问题
