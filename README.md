@@ -7,12 +7,12 @@
 
 <h3>OpenClaw AI 智能体最佳真实用例大全</h3>
 
-<p>40 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</p>
+<p>41 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-40-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-41-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -131,6 +131,7 @@
 | [AI 财报追踪器（适配）](usecases/earnings-tracker.md) | A 股财报追踪，AKShare 免费数据源 + 业绩预告/快报自动化 | ⭐⭐ |
 | [开发前创意验证器（适配）](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品（百度指数/微信指数/V2EX/少数派） | ⭐⭐ |
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
+| [Agent Swarm 一人开发团队（适配）](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code Agent 舰队，Git Worktree 隔离 + 三模型代码审查 + 自改进 Prompt | ⭐⭐⭐ |
 
 ---
 
@@ -164,6 +165,7 @@
 | [n8n 工作流编排](usecases/n8n-workflow-orchestration.md) | 通过 webhook 将 API 调用委托给 n8n 工作流，智能体从不接触凭证 | ⭐⭐⭐ |
 | [Opik 可观测性追踪](usecases/opik-openclaw-observability.md) | 将 OpenClaw 运行链路接入 Opik，统一查看 LLM/工具/子智能体追踪，并监控 token 与成本 | ⭐⭐ |
 | [自愈家庭服务器](usecases/self-healing-home-server.md) | 运行始终在线的基础设施智能体，自动发现并修复故障 | ⭐⭐⭐ |
+| [Agent Swarm 一人开发团队](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队实现全自动化开发流水线（国内适配） | ⭐⭐⭐ |
 
 ## 生产力
 
