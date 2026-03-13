@@ -1,6 +1,8 @@
 # Agent Swarm 一人开发团队（全配置指南）
 
 > 含国内适配：飞书/钉钉通知 / Codex 替代方案 / 国内监控平台
+>
+> **技术要求较高**：本用例涉及 Git Worktree、tmux、Cron、gh CLI 等系统级工具，建议有 Linux/macOS 命令行经验和 CI/CD 基础的用户使用。
 
 用 Codex 或 Claude Code 直接编码？它们只看到代码，看不到你的业务全貌。上下文窗口（context window）是零和博弈——填满代码就没有空间放业务上下文，填满客户历史就没有空间放代码。
 
@@ -153,6 +155,7 @@ Definition of Done（确保你的 Agent 知道这个）：
   "checks": {
     "prCreated": true,
     "ciPassed": true,
+    "codexReviewPassed": true,
     "claudeReviewPassed": true,
     "geminiReviewPassed": true
   },
