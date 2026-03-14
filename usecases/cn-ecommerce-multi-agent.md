@@ -26,6 +26,21 @@
 
 > 4 个 Skill 需要根据你的电商平台 API 自行开发。AWS PoC 提供了基于 Mock API（模拟接口）的完整参考实现，包含 12 个 SKU（库存单位）、50 个客户、20+ 个端点。
 
+### API 接入现状
+
+**国内电商平台（京东/淘宝/拼多多）目前没有 1000+ stars 的开源 API SDK。** 官方 SDK 通过各平台开发者门户分发，不在 GitHub 上托管，且所有平台 API 均需商家认证、实名验证和应用审核：
+
+| 平台 | 开发者门户 | API 准入要求 |
+|------|-----------|-------------|
+| 京东 | [jos.jd.com](https://jos.jd.com/) | 企业资质 + 店铺绑定，自研应用仅限本公司店铺 |
+| 淘宝/天猫 | [open.taobao.com](https://open.taobao.com/) | 企业资质，交易类 API 需额外审核，部分类目已关闭 |
+| 拼多多 | [open.pinduoduo.com](https://open.pinduoduo.com/) | 6 种角色，大部分需企业资质，审核 1-3 个工作日 |
+| **Shopify** | [shopify.dev](https://shopify.dev/) | Partner 账号（免费），API 完全开放 |
+
+**跨境电商推荐 Shopify**：官方 Python SDK（[Shopify/shopify_python_api](https://github.com/Shopify/shopify_python_api)，1,400+ stars，活跃维护）可直接用于构建 OpenClaw Skill，是目前唯一有成熟开源生态的电商平台。
+
+**国内平台的实际路径**：从各平台开发者门户下载官方 SDK → 完成商家认证和 OAuth 授权 → 基于 SDK 封装为 OpenClaw Skill。AWS PoC 的 Mock API 可作为开发阶段的替代，先跑通架构再对接真实 API。
+
 ## 如何设置
 
 ### 1. 多 Agent 绑定配置
