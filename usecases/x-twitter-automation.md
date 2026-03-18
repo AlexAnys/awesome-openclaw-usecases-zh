@@ -37,13 +37,19 @@ openclaw plugins install @xquik/tweetclaw
 
 ### 2. 获取 API Key 并配置
 
-前往 [xquik.com/account-manager](https://xquik.com/account-manager) 注册并获取 API Key，然后配置：
+前往 [xquik.com/account-manager](https://xquik.com/account-manager) 注册并获取 API Key。
+
+> **安全提示**：不要把 API Key 明文写入 OpenClaw 配置文件。下面的方法利用 OpenClaw 的 `${VAR}` 语法，配置文件中只存储变量引用，运行时自动从环境变量解析真实值。
 
 ```bash
-# 设置 API Key（不要直接写入明文，建议使用环境变量）
-export XQUIK_API_KEY="xq_YOUR_KEY"
-openclaw config set plugins.entries.tweetclaw.config.apiKey "$XQUIK_API_KEY"
+# 1. 将 API Key 写入 OpenClaw 全局 .env（该文件不应纳入版本控制）
+echo 'XQUIK_API_KEY=xq_YOUR_KEY' >> ~/.openclaw/.env
+
+# 2. 配置插件引用环境变量（注意：必须用单引号，防止 shell 提前展开变量）
+openclaw config set plugins.entries.tweetclaw.config.apiKey '${XQUIK_API_KEY}'
 ```
+
+这样 `~/.openclaw/openclaw.json` 中只会保存字面量 `${XQUIK_API_KEY}`，API Key 的真实值仅存在于 `.env` 文件中。
 
 ### 3. 启用事件轮询（可选）
 
@@ -114,6 +120,12 @@ Search tweets about AI agents from the last 24 hours.
 - **内容合规**：自动发布的内容需遵守 X 的服务条款（ToS），避免垃圾信息和误导内容
 - **账号隔离**：建议为自动化操作创建独立的 X 账号，避免主账号受影响
 - **渐进式使用**：新账号从低频操作开始，逐步增加使用量，模拟正常用户行为模式
+
+### 凭证安全
+
+- **永远不要**用 `openclaw config set ... "$VAR"` 的双引号形式设置 API Key——shell 会先展开变量，将明文写入配置文件
+- 使用 `'${VAR}'` 单引号形式，让 OpenClaw 在运行时解析环境变量
+- API Key 应存放在 `~/.openclaw/.env` 中，并确保该文件不被提交到版本控制
 
 ### 工作流建议
 
