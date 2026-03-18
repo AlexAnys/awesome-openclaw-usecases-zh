@@ -8,7 +8,7 @@
 
 - **客户管理**：自动记录沟通历史，会议前生成客户简报
 - **时间追踪**：通过 Toggl 或 Kimai 记录工时，识别未计费时间
-- **发票与催款**：连接 FreshBooks 生成发票，自动发送逾期提醒
+- **发票与催款**：连接 Invoice Ninja（开源自托管）生成发票，自动发送逾期提醒
 - **费用分类**：按税务类别归档支出，为报税季做准备
 - **排期管理**：Google Calendar 集成，跨项目排期防冲突
 - **方案/报价单**：根据历史项目数据生成报价，内置范围边界条款
@@ -34,13 +34,13 @@
 |------|------|---------|
 | `gog` CLI | Gmail + Google Calendar 集成 | [gog 安装指南](https://github.com/obot-platform/gog) |
 | `kimai-time-tracking` | 工时记录与项目计时 | 通过 OpenClaw Skills Registry 安装 |
-| `freshbooks` | 发票生成、客户管理、账款追踪 | 通过 OpenClaw Skills Registry 安装 |
+| `invoice-ninja` | 发票生成、客户管理、账款追踪（[开源 MIT](https://github.com/invoiceninja/invoiceninja)） | 自托管部署 + API 集成 |
 | `google-calendar-integration` | 排期管理、空闲时段查询 | 通过 OpenClaw Skills Registry 安装 |
 | `web_search`（内置） | 市场费率调研、客户背景研究 | 无需安装 |
 
 可选技能：
 
-- `xero` — 如果你用 Xero 而非 FreshBooks 做会计
+- `xero` — 如果你用 Xero 做会计（商业 SaaS）
 - `fiken` — 北欧用户的会计方案（支持发票、联系人、时间追踪）
 - Toggl 集成 — 如果你已有 Toggl 工时数据，可通过 Freelancer Command Center 接入
 
@@ -51,10 +51,9 @@
 确保以下环境变量已配置（建议写入 `.env` 文件）：
 
 ```bash
-# FreshBooks OAuth（开放授权，发票和客户管理）
-export FRESHBOOKS_CLIENT_ID="your_client_id"
-export FRESHBOOKS_CLIENT_SECRET="your_client_secret"
-export FRESHBOOKS_ACCOUNT_ID="your_account_id"
+# Invoice Ninja（开源发票和客户管理，自托管）
+export INVOICE_NINJA_URL="https://your-invoiceninja-instance.com"
+export INVOICE_NINJA_API_TOKEN="your_api_token"
 
 # Kimai（工时记录）
 export KIMAI_BASE_URL="https://your-kimai-instance.com"
@@ -73,8 +72,8 @@ export TELEGRAM_BOT_TOKEN="your_bot_token"
 # 安装时间追踪技能
 openclaw skills install kimai-time-tracking
 
-# 安装发票技能
-openclaw skills install freshbooks
+# 安装发票技能（Invoice Ninja 自托管实例需先部署，参见 https://github.com/invoiceninja/invoiceninja）
+openclaw skills install invoice-ninja
 
 # 安装日历技能
 openclaw skills install google-calendar-integration
@@ -140,7 +139,7 @@ TIME TRACKING:
 - At end of day, categorize unbilled time and suggest which entries to bill.
 
 INVOICING:
-- When I say "invoice [client name]", pull unbilled Kimai hours + any fixed milestones, generate a FreshBooks invoice, and send it.
+- When I say "invoice [client name]", pull unbilled Kimai hours + any fixed milestones, generate an Invoice Ninja invoice via API, and send it.
 - Track payment status. Send reminders:
   - Day 3 overdue: friendly reminder
   - Day 7: firmer follow-up
@@ -171,7 +170,7 @@ SCHEDULING:
 1. **客户管理**：添加一个测试客户，验证数据库写入
 2. **时间追踪**：启动/停止计时器，确认 Kimai 记录正确
 3. **日历**：创建一个测试事件，验证冲突检测
-4. **发票**：生成一张测试发票（FreshBooks 沙箱模式）
+4. **发票**：生成一张测试发票（Invoice Ninja 测试环境）
 5. **催款**：模拟一张逾期发票，验证提醒消息
 6. **报价单**：让 OpenClaw 基于描述生成一份报价
 
@@ -187,7 +186,8 @@ SCHEDULING:
 
 - [OpenClaw Freelancer Command Center](https://popularaitools.ai/openclaw-freelancer-review/) — 10 个专为自由职业者设计的 AI 技能套件评测
 - [Kimai Time Tracking 技能](https://tessl.io/registry/skills/github/openclaw/skills/kimai-time-tracking) — 开源工时记录集成
-- [FreshBooks 技能](https://lobehub.com/skills/openclaw-skills-freshbooks) — 发票和客户管理
+- [Invoice Ninja](https://github.com/invoiceninja/invoiceninja) — 开源发票与客户管理（MIT 协议，自托管）
+- [FreshBooks 技能](https://lobehub.com/skills/openclaw-skills-freshbooks) — 发票和客户管理（商业 SaaS 替代）
 - [Fiken 会计技能](https://github.com/kristianvast/skill-fiken) — 支持发票、联系人、时间追踪
 - [gog CLI](https://github.com/obot-platform/gog) — Google Workspace 集成
 - [10 AI Agents for Freelancers](https://www.mindstudio.ai/blog/ai-agents-for-freelancers) — MindStudio 自由职业者 AI 代理方案总结
@@ -219,11 +219,11 @@ SCHEDULING:
 
 ### 发票模块：现状与限制
 
-**核心差异**：国内使用增值税发票体系（金税系统），与海外的 FreshBooks/Stripe 发票体系完全不同。
+**核心差异**：国内使用增值税发票体系（金税系统），与海外的 Invoice Ninja/Stripe 等发票体系完全不同。
 
 | 维度 | 海外 | 国内 |
 |------|------|------|
-| 发票生成 | FreshBooks/Stripe，API 完善 | 需通过税控设备（如百望云、航信诺诺）开具 |
+| 发票生成 | Invoice Ninja/Stripe 等，API 完善 | 需通过税控设备（如百望云、航信诺诺）开具 |
 | 发票类型 | 商业发票（Invoice），格式自由 | 增值税普通发票/专用发票，格式固定 |
 | 催款 | 邮件即可 | 邮件 + 微信，文化上更依赖关系 |
 
