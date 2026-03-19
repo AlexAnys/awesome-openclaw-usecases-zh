@@ -214,6 +214,8 @@
 
 ---
 
+> 💡 能用上 OpenClaw 并关注这些用例，说明你在 AI 协作上已经走得很深了。这些工具的背后，是 Coding Agent 能力的一次质变。如果你想更自由地发挥这种能力，打造属于自己的生产级应用，欢迎关注 **[Agent-First Development](https://github.com/AlexAnys/agent-first-dev)**——基于 Stanford 授权课程，专为非技术背景的领域专家设计。项目开发中，欢迎宝贵反馈。
+
 ## 🌟 为什么选择这个合集？
 
 | | 自己摸索 | 看碎片教程 | **本合集** |
