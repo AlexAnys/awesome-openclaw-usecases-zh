@@ -214,7 +214,7 @@
 
 ---
 
-> 💡 能用好 OpenClaw 这些用例，说明你在 AI 协作上很领先了。这些工具的背后，是 Coding Agent 工程能力的快速发展。想更自由地发挥这个能力，打造个性化生产级应用，欢迎关注 **[Agent-First Development](https://github.com/AlexAnys/agent-first-dev)**——基于斯坦福大学教授等授权，所有背景的同学设计。项目开发中，欢迎宝贵反馈。
+> 💡 能用好 OpenClaw 这些用例，说明你在 AI 协作上很领先了。这些工具的背后，是 Coding Agent 工程能力的快速发展。想更自由地发挥这个能力，打造个性化生产级应用，欢迎关注 **[Agent-First Development](https://github.com/AlexAnys/agent-first-dev)**——基于斯坦福大学教授等授权，为所有背景的同学设计。项目开发中，欢迎宝贵反馈。
 
 ## 🌟 为什么选择这个合集？
 
