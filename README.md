@@ -189,6 +189,7 @@
 | [动态仪表板](usecases/dynamic-dashboard.md) | 实时仪表板，子智能体并行从 API、数据库和社交媒体获取数据 | ⭐⭐⭐ |
 | [自主项目管理](usecases/autonomous-project-management.md) | 使用 STATE.yaml 模式协调多智能体项目，无需人工编排 | ⭐⭐⭐ |
 | [多智能体专业团队](usecases/multi-agent-team.md) | 4 个专业 AI 智能体（战略+开发+营销+商务）作为你的虚拟团队 | ⭐⭐⭐ |
+| [产品经理 Agent Skills](https://github.com/Digidai/product-manager-skills) | 资深产品经理 Agent，6 个知识域、30+ 框架、32 个 SaaS 指标公式、12 个模板、反模式检测。纯 Markdown，零脚本。 | ⭐ |
 
 ## 研究与学习
 
