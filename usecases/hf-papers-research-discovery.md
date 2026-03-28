@@ -36,13 +36,13 @@ clawhub install arxiv-source
 I want to stay on top of ML research. Here's my daily workflow:
 
 1. Every morning, show me the top 10 trending papers on Hugging Face (sorted by upvotes)
-   - For each paper, show: title, upvotes, GitHub repo (if any), and 1-line AI summary
+   - For each paper, show: paper ID (the arXiv ID, e.g. "2505.12345"), title, upvotes, GitHub repo (if any), and 1-line AI summary
 
 2. When I say "search [topic]":
-   - Search HF Papers and show the most relevant results
+   - Search HF Papers and show the most relevant results with their paper IDs
    - Highlight papers with linked GitHub repos or high upvote counts
 
-3. When I pick a paper (by ID):
+3. When I pick a paper (by paper ID, e.g. "2505.12345"):
    - Show the full abstract, authors, and linked resources
    - Show community comments if any
    - Ask if I want a deep read
@@ -56,7 +56,7 @@ Keep a running list of papers I've reviewed today with one-line takeaways.
 ```
 
 提示词说明：
-- 第 1 步：每天早上展示 HF 热门 Top 10，按点赞排序，附标题/点赞数/GitHub 仓库/AI 摘要
+- 第 1 步：每天早上展示 HF 热门 Top 10，按点赞排序，附 paper ID（arXiv ID）/标题/点赞数/GitHub 仓库/AI 摘要
 - 第 2 步：输入 "search [主题]" 进行关键词搜索，高亮有代码仓库或高点赞的论文
 - 第 3 步：选定论文后展示完整摘要、作者、关联资源、社区评论
 - 第 4 步：深读模式——通过 arxiv-source 获取全文，总结关键贡献/方法/结论
@@ -80,11 +80,11 @@ HuggingFace 在中国大陆访问受限。以下是可用的替代方案：
 
 | 方案 | 说明 |
 |------|------|
-| **hf-mirror.com** | 社区维护的 HF 镜像站，设置 `HF_ENDPOINT=https://hf-mirror.com` 即可 |
+| **hf-mirror.com** | 社区维护的 HF 镜像站，设置 `HF_ENDPOINT=https://hf-mirror.com` 即可。该镜像已覆盖 Papers API（`/api/daily_papers`、`/api/papers/search` 等），hf-papers 技能可通过此镜像正常工作 |
 | **huggingface.ac.cn** | HF 官方中国合作镜像，包含 AI 论文精选页面 |
 | 代理访问 | 自行配置网络代理访问原站 |
 
-> **注意**：hf-papers 技能底层调用 HuggingFace 公开 API（`/api/daily_papers`、`/api/papers/search` 等）。如果你的网络无法直接访问 huggingface.co，需要在运行 OpenClaw 的环境中配置代理，或修改技能中的 API 基础 URL（Base URL）指向镜像站。
+> **提示**：如果 hf-papers 技能不支持 `HF_ENDPOINT` 环境变量，你需要手动修改技能源码中的 API 基础 URL（Base URL），将 `huggingface.co` 替换为 `hf-mirror.com`。
 
 ### 国内 AI 论文社区
 
@@ -115,7 +115,7 @@ HuggingFace 在中国大陆访问受限。以下是可用的替代方案：
 I want to track ML research daily. Here's my workflow:
 
 1. Every morning at 9 AM, fetch the top 10 trending papers from Hugging Face Papers (sorted by upvotes)
-   - Show: title, upvotes, GitHub repo link (if available), 1-line summary
+   - Show: paper ID (arXiv ID), title, upvotes, GitHub repo link (if available), 1-line summary
    - Format as a numbered list for easy reference
 
 2. After showing the list, wait for my instructions:
@@ -138,7 +138,7 @@ Respond in Chinese for summaries and explanations, but keep paper titles and tec
 ```
 
 提示词说明：
-- 第 1 步：每天早 9 点获取 HF 热门 Top 10，以编号列表格式展示
+- 第 1 步：每天早 9 点获取 HF 热门 Top 10，附 paper ID（arXiv ID），以编号列表格式展示
 - 第 2 步：输入数字查看详情，输入 "search [关键词]" 搜索
 - 第 3 步：论文详情包含摘要、作者、GitHub 链接、社区评论
 - 第 4 步：输入 "deep read" 启动深读模式
