@@ -7,12 +7,12 @@
 
 <h3>OpenClaw AI 智能体最佳真实用例大全</h3>
 
-<p>42 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</p>
+<p>45 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-42-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-45-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -36,7 +36,7 @@
 
 </details>
 
-> **2026.3.4 更新**：中国特色用例扩充至 13 个——新增 A 股财报追踪、多渠道客服、创意验证器等国际用例的国内适配，按场景分类展示。详见 [中国特色用例](#-中国特色用例)。
+> **2026.3.29 更新**：新增竞品分析、HuggingFace 论文发现、arXiv 论文阅读+LaTeX 写作 3 个用例，中国特色用例扩充至 18 个。详见 [中国特色用例](#-中国特色用例)。
 
 ---
 
@@ -48,7 +48,7 @@
 - [创意与构建](#创意与构建) — 让 AI 帮你创作内容、构建应用
 - [基础设施与 DevOps](#基础设施与-devops) — 服务器自愈、工作流自动化
 - [生产力](#生产力) — 邮件整理、日程管理、客户服务、个人助理
-- [研究与学习](#研究与学习) — 知识库、市场调研、财报追踪
+- [研究与学习](#研究与学习) — 知识库、市场调研、竞品分析、论文发现
 - [金融与交易](#金融与交易) — 预测市场模拟交易
 
 ---
@@ -136,6 +136,9 @@
 | [Agent Swarm 一人开发团队（适配）](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队，全自动化开发流水线 | ⭐⭐⭐ |
 | [电商多 Agent 架构](usecases/cn-ecommerce-multi-agent.md) | 多 Agent 绑定飞书群实现电商角色分工，4 个 Skill 覆盖销售/库存/客户全场景 | ⭐⭐ |
 | [A 股每日行情监控](usecases/cn-a-share-monitor.md) | 盘前简报 + 盘后复盘 + 板块资金流向，AKShare/MCP 数据源 | ⭐⭐ |
+| [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
+| [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
+| [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
 
 ---
 
@@ -204,6 +207,9 @@
 | [语义记忆搜索](usecases/semantic-memory-search.md) | 为 OpenClaw 记忆文件添加向量驱动的语义搜索 | ⭐⭐ |
 | [市场研究与产品工厂](usecases/market-research-product-factory.md) | 从 Reddit 和 X 挖掘真实痛点，让 AI 构建解决方案 MVP | ⭐⭐⭐ |
 | [开发前创意验证器](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品，返回竞争度评分（国内适配） | ⭐⭐ |
+| [竞争对手分析与价格监控](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 构建竞品周报，月 $1.20 替代 $150 订阅（国内适配） | ⭐⭐ |
+| [HuggingFace 论文发现](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选、元数据浏览、社区信号 + arXiv 深读（国内适配） | ⭐ |
+| [arXiv 论文阅读与 LaTeX 写作](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，无需本地 TeX 环境（国内适配） | ⭐⭐ |
 
 ## 金融与交易
 
