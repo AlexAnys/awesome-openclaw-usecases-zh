@@ -252,3 +252,15 @@
 **觉得有用？请给个 ⭐ Star 支持一下，让更多中文用户发现这个合集！**
 
 </div>
+
+---
+
+## 📈 Star History
+
+<a href="https://star-history.com/#AlexAnys/awesome-openclaw-usecases-zh&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date" />
+ </picture>
+</a>
