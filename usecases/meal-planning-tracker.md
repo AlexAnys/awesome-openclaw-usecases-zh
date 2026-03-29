@@ -37,34 +37,66 @@
 
 ## 所需技能
 
-- **Mealie MCP Server**（`rldiao/mealie-mcp-server`）：食谱 CRUD、膳食计划、购物清单——共 45 个工具
+- **Mealie MCP Server**（[`rldiao/mealie-mcp-server`](https://github.com/rldiao/mealie-mcp-server)）：食谱 CRUD、膳食计划、购物清单——共 45 个工具
+- [Mealie](https://mealie.io/)：自托管食谱管理器，需要 Docker 环境部署
+- [USDA FoodData Central API](https://fdc.nal.usda.gov/api-guide/)：营养成分查询（免费 API Key）
 - 定时任务（cron job）用于提醒和周度分析
-- 文件存储用于症状日志和营养档案
 - Telegram 或 Slack 用于交互界面
-- HTTP 请求用于 USDA FoodData Central API 调用
 
-## 设置方法
+## 如何设置
 
-### 1. 部署 Mealie 并连接 MCP
+### 1. 部署 Mealie
 
-首先需要一个运行中的 Mealie 实例（Docker 部署最简单），然后通过 MCP 连接到 OpenClaw：
+首先需要一个运行中的 Mealie 实例。Docker Compose 是最简单的方式：
 
-```text
-## Mealie MCP Setup
-
-Install the Mealie MCP server:
-
-fastmcp install mealie-mcp-server \
-  --env-var MEALIE_BASE_URL=https://your-mealie-instance.com \
-  --env-var MEALIE_API_KEY=your-mealie-api-key
-
-Verify by asking me: "List all recipes in Mealie"
-— I should return your recipe library via get_recipes.
+```bash
+# 创建 docker-compose.yml 并启动 Mealie
+mkdir -p ~/mealie && cd ~/mealie
+curl -o docker-compose.yml https://raw.githubusercontent.com/mealie-recipes/mealie/main/docker-compose.yml
+docker compose up -d
 ```
 
-> **凭证安全**：`MEALIE_API_KEY` 通过 MCP 环境变量传递，不要写入提示词或记忆文件。
+启动后访问 `http://localhost:9925`，按提示创建管理员账号。在 Mealie 设置页面生成 API Key，后续步骤需要用到。
 
-### 2. 配置营养查询
+> 详细部署选项参见 [Mealie 官方文档](https://docs.mealie.io/documentation/getting-started/installation/)。
+
+### 2. 连接 Mealie MCP
+
+克隆 Mealie MCP Server 仓库并安装依赖（需要 Python 3.12+）：
+
+```bash
+git clone https://github.com/rldiao/mealie-mcp-server.git
+cd mealie-mcp-server
+uv sync
+```
+
+> 没有 `uv`？用 `pip install uv` 或参见 [uv 安装文档](https://docs.astral.sh/uv/getting-started/installation/)。
+
+将以下 MCP 配置添加到你的客户端配置文件中（OpenClaw：`~/.openclaw/openclaw.json`；Claude Desktop：`~/.claude/settings.json`）。注意将 `/path/to/mealie-mcp-server` 替换为你实际克隆的路径：
+
+```json
+{
+  "mcpServers": {
+    "mealie": {
+      "command": "uv",
+      "args": [
+        "--directory", "/path/to/mealie-mcp-server/src",
+        "run", "server.py"
+      ],
+      "env": {
+        "MEALIE_BASE_URL": "${MEALIE_BASE_URL}",
+        "MEALIE_API_KEY": "${MEALIE_API_KEY}"
+      }
+    }
+  }
+}
+```
+
+> **凭证安全**：`MEALIE_API_KEY` 通过环境变量传递，不要硬编码在配置文件或提示词中。
+
+试一试：发送"列出 Mealie 中所有食谱"，应该能通过 `get_recipes` 返回你的食谱库。
+
+### 3. 配置营养查询
 
 注册 USDA FoodData Central API key（免费，覆盖 38 万+ 食品），配置智能体自动查询：
 
@@ -81,7 +113,7 @@ When I log a meal or create a meal plan:
 4. Flag if any daily target is below 80% by dinner time
 ```
 
-### 3. 膳食规划与购物清单
+### 4. 膳食规划与购物清单
 
 以下提示词让智能体每周日生成下周膳食计划并自动创建购物清单：
 
@@ -104,7 +136,7 @@ Every Sunday at 9 AM:
 If I say "swap Tuesday dinner", suggest 3 alternatives matching the same nutritional targets and intolerance constraints.
 ```
 
-### 4. 食物不耐受追踪与排除饮食
+### 5. 食物不耐受追踪与排除饮食
 
 这是本用例的核心差异化功能——从被动记录升级为主动侦测：
 
@@ -140,7 +172,7 @@ When I confirm an elimination trial:
    - Recommended permanent exclusions vs. "tolerable in small amounts"
 ```
 
-### 5. 购物清单增强（可选）
+### 6. 购物清单增强（可选）
 
 如果你使用 Apple 设备，可以结合 `grocery-list-skill`（`densign01/grocery-list-skill`）将购物清单同步到 Apple Reminders：
 
@@ -171,7 +203,7 @@ After generating the weekly shopping list in Mealie:
 - **外卖整合**：通过识别外卖订单截图来记录非自制餐食的食材（视觉模型解析菜品名 → 匹配食物成分表）
 - **时令食材**：中国农历节气对应的时令蔬果，在膳食规划中优先推荐当季食材
 
-## 关键洞察
+## 实用建议
 
 - **72 小时窗口是关键**：食物不耐受反应常延迟 24-72 小时，人脑无法可靠地跨天关联。这正是 AI 追踪的核心价值——自动回溯三天内所有摄入食物并计算相关性。
 - **结构化数据 > 自由文本**：使用 Mealie 管理食谱意味着每顿饭的食材是结构化的，不需要从"吃了个三明治"中猜测具体用了什么食材。
