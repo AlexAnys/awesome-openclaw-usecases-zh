@@ -35,7 +35,7 @@
   "mcpServers": {
     "perplexity": {
       "command": "npx",
-      "args": ["-y", "@ppl-ai/mcp-server"],
+      "args": ["-y", "@perplexity-ai/mcp-server"],
       "env": {
         "PERPLEXITY_API_KEY": "${PERPLEXITY_API_KEY}"
       }
@@ -111,11 +111,22 @@ Rules:
 
 ### 5. 设置定时执行（可选）
 
-如果需要每周自动执行，可以通过 cron 任务（定时任务）触发：
+如果需要每周自动执行，可以通过 OpenClaw 内置的定时任务功能触发：
 
 ```bash
-# 每周一早上 9 点执行竞品周报（crontab 格式）
-0 9 * * 1 cd /your/project && openclaw "/competitive-check" --output reports/weekly-$(date +\%Y\%m\%d).json
+openclaw cron add \
+  --name "competitive-weekly" \
+  --cron "0 9 * * 1" \
+  --tz "Asia/Shanghai" \
+  --session isolated \
+  --message "/competitive-check"
+```
+
+或者直接在对话中用自然语言设置：
+
+```text
+帮我创建一个定时任务：每周一早上 9 点执行 /competitive-check，生成竞品周报。
+时区设为 Asia/Shanghai，使用独立会话。
 ```
 
 ## 真实案例
