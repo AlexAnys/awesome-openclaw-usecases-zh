@@ -60,7 +60,9 @@
 }
 ```
 
-> **本地部署**：如需自建服务，该项目依赖 Python ≥ 3.12 和 ta-lib C 库，通过 `python main.py --transport=http` 启动。详见 [项目 README](https://github.com/elsejj/mcp-cn-a-stock)。
+> **注意**：此为项目作者提供的公共演示服务，IP 地址可能变更或下线。生产使用建议自建服务。
+>
+> **本地部署**：该项目依赖 Python ≥ 3.12 和 ta-lib C 库，通过 `python main.py --transport=http` 启动。详见 [项目 README](https://github.com/elsejj/mcp-cn-a-stock)。
 
 然后直接用自然语言查询个股信息：
 
