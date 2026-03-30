@@ -36,7 +36,7 @@
 
 </details>
 
-> **2026.3.30 更新**：新增[飞书全能操作台](usecases/cn-feishu-lark-cli.md)（Lark CLI 官方开源）、A 股行情监控、竞品分析、HuggingFace 论文发现、arXiv+LaTeX 写作共 5 个用例，中国特色用例扩充至 19 个。
+> **2026.3.30 更新**：新增飞书全能操作台（Lark CLI 官方开源）、A 股行情监控、竞品分析、HuggingFace 论文发现、arXiv+LaTeX 写作共 5 个用例，中国特色用例扩充至 19 个。详见 [中国特色用例](#-中国特色用例)。
 
 ---
 
