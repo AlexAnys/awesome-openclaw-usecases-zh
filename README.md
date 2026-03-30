@@ -36,7 +36,7 @@
 
 </details>
 
-> **2026.3.30 更新**：新增[飞书全能操作台（Lark CLI）](usecases/cn-feishu-lark-cli.md)——飞书官方开源 CLI，让 AI Agent 操作飞书 11 个业务领域。中国特色用例扩充至 19 个。
+> **2026.3.30 更新**：新增[飞书全能操作台](usecases/cn-feishu-lark-cli.md)（Lark CLI 官方开源）、A 股行情监控、竞品分析、HuggingFace 论文发现、arXiv+LaTeX 写作共 5 个用例，中国特色用例扩充至 19 个。
 
 ---
 
@@ -122,7 +122,7 @@
 | 名称 | 描述 | 难度 |
 |------|------|:---:|
 | [飞书 AI 助手](usecases/cn-feishu-ai-assistant.md) | 把 OpenClaw 部署为飞书机器人，在对话中直接触发 AI 任务，支持文档自动化 | ⭐⭐ |
-| [飞书全能操作台（Lark CLI）](usecases/cn-feishu-lark-cli.md) | 🆕 让 AI Agent 以你的身份操作飞书——搜文档、读妙记、查日历、发消息，覆盖 11 个领域 2500+ API | ⭐ |
+| [飞书全能操作台（Lark CLI）](usecases/cn-feishu-lark-cli.md) | 让 AI Agent 以你的身份操作飞书——搜文档、读妙记、查日历、发消息，覆盖 11 个领域 200+ 命令 | ⭐ |
 | [钉钉 AI 助手](usecases/cn-dingtalk-ai-assistant.md) | 把 OpenClaw 部署为钉钉机器人，Stream 模式无需公网 IP | ⭐⭐ |
 | [企业微信 AI 助手](usecases/cn-wecom-ai-assistant.md) | 在企业微信中使用 AI，通过微信插件让个人微信也能用 | ⭐⭐ |
 | [早间简报（适配）](usecases/custom-morning-brief.md) | 每日定时推送简报到飞书/钉钉，支持中文新闻源和 cron 配置 | ⭐ |
