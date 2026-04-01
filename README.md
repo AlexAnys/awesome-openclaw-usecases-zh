@@ -1,13 +1,11 @@
 <div align="center">
 
-<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例合集" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
+<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例与案例合集 - 46 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
 
 <br/>
 <br/>
 
-<h3>OpenClaw AI 智能体最佳真实用例大全</h3>
-
-<p>46 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</p>
+<p><strong>46 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
 
 <br/>
 
@@ -23,7 +21,7 @@
 
 ---
 
-# Awesome OpenClaw 最佳用例合集（中文版）
+# OpenClaw 最佳用例 & 案例合集（中文版）🇨🇳
 
 > 解决 OpenClaw 普及的瓶颈：不是 ~~技能~~，而是找到 **能改善你生活的方式**。
 >
