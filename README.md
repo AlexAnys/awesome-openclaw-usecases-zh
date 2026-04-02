@@ -24,6 +24,7 @@
 ---
 
 # OpenClaw 最佳用例 & 案例合集（中文版）🇨🇳
+- [skill-taxonomy](https://github.com/SeeleAI/skill-taxonomy) - Structured taxonomy for AI agent skills: discovery, classification and routing across multi-agent workflows.
 
 > 解决 OpenClaw 普及的瓶颈：不是 ~~技能~~，而是找到 **能改善你生活的方式**。
 >
