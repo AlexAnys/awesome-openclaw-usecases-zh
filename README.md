@@ -14,6 +14,7 @@
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+[![GitHub](https://img.shields.io/badge/主仓库-GitHub-black?style=flat-square&logo=github)](https://github.com/AlexAnys/awesome-openclaw-usecases-zh)
 [![AtomGit](https://img.shields.io/badge/国内镜像-AtomGit-orange?style=flat-square)](https://atomgit.com/alex_anys/awesome-openclaw-usecases-zh)
 
 **[快速开始](#-新手入门指南)** · **[用例目录](#-目录)** · **[贡献指南](CONTRIBUTING.md)**
@@ -253,7 +254,8 @@
 
 - [OpenClaw 官方仓库](https://github.com/openclaw/openclaw) — 安装和官方文档
 - [ClawHub 技能市场](https://clawhub.ai) — 浏览和安装技能
-- [AtomGit 国内镜像](https://atomgit.com/alex_anys/awesome-openclaw-usecases-zh) — 国内访问更快，内容自动同步
+- [GitHub 主仓库](https://github.com/AlexAnys/awesome-openclaw-usecases-zh) — 主要开发与讨论在此进行
+- [AtomGit 国内镜像](https://atomgit.com/alex_anys/awesome-openclaw-usecases-zh) — 国内访问更快，自动同步
 
 ---
 
