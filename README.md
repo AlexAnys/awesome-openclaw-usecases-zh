@@ -5,12 +5,12 @@
 <br/>
 <br/>
 
-<p><strong>46 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
+<p><strong>47 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-46-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-47-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -140,6 +140,7 @@
 | [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
 | [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
 | [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
+| [微信公众号 Markdown 自动发布](usecases/cn-wechat-official-publish.md) | 在飞书/Telegram 对话中一键发起公众号发布，扫码登录后继续 confirm 完成发布 | ⭐⭐ |
 
 ---
 
@@ -153,6 +154,7 @@
 | [每日 YouTube 摘要](usecases/daily-youtube-digest.md) | 获取你关注频道的每日新视频摘要，不错过任何内容 | ⭐ |
 | [X 账号分析](usecases/x-account-analysis.md) | 获取你的 X（原 Twitter）账号的定性分析 | ⭐⭐ |
 | [多源科技新闻摘要](usecases/multi-source-tech-news-digest.md) | 自动聚合 109+ 来源的科技新闻，支持质量评分和多渠道分发 | ⭐⭐ |
+| [微信公众号 Markdown 自动发布](usecases/cn-wechat-official-publish.md) | 把对话里的 Markdown 文章自动发布到微信公众号，支持二维码登录与状态追踪 | ⭐⭐ |
 
 ## 创意与构建
 
