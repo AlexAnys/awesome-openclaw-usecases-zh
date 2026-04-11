@@ -1,16 +1,16 @@
 <div align="center">
 
-<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例与案例合集 - 46 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
+<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例与案例合集 - 47 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
 
 <br/>
 <br/>
 
-<p><strong>46 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
+<p><strong>47 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-46-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-47-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -140,6 +140,7 @@
 | [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
 | [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
 | [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
+| [中文互联网 30 天研究工具](usecases/cn-internet-research-30days.md) | 一句话搜索微博/小红书/B站/知乎等 8 大平台最近 30 天内容，生成带来源引用的研究报告 | ⭐ |
 
 ---
 
@@ -211,6 +212,7 @@
 | [竞争对手分析与价格监控](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 构建竞品周报，月 $1.20 替代 $150 订阅（国内适配） | ⭐⭐ |
 | [HuggingFace 论文发现](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选、元数据浏览、社区信号 + arXiv 深读（国内适配） | ⭐ |
 | [arXiv 论文阅读与 LaTeX 写作](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，无需本地 TeX 环境（国内适配） | ⭐⭐ |
+| [中文互联网 30 天研究工具](usecases/cn-internet-research-30days.md) | 搜索微博/小红书/B站/知乎等 8 大中文平台最近 30 天内容，综合评分生成研究报告 | ⭐ |
 
 ## 金融与交易
 
