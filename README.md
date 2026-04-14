@@ -255,6 +255,7 @@
 - [OpenClaw 官方仓库](https://github.com/openclaw/openclaw) — 安装和官方文档
 - [GitHub 主仓库](https://github.com/AlexAnys/awesome-openclaw-usecases-zh) — 主要开发与讨论在此进行
 - [AtomGit 国内托管](https://atomgit.com/alex_anys/awesome-openclaw-usecases-zh) — 国内访问更快，内容同步更新
+- [CCHub](https://github.com/Moresl/cchub) - A desktop control panel for the Claude Code / Codex / Gemini CLI ecosystem. Manage MCP servers, config profiles, agent skills, CLAUDE.md, hooks, and workflow templates from a single Tauri app (Windows / macOS / Linux).
 
 ---
 
