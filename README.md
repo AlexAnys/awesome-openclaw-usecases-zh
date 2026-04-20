@@ -43,13 +43,19 @@
 ## 🗂 目录
 
 - [新手入门指南](#-新手入门指南)
-- [中国特色用例](#-中国特色用例) — 适配国内生态的精选用例（飞书、钉钉、企业微信、AKShare 等）
-- [社交媒体](#社交媒体) — 自动获取 Reddit、YouTube、X 等平台的精选内容
-- [创意与构建](#创意与构建) — 让 AI 帮你创作内容、构建应用
-- [基础设施与 DevOps](#基础设施与-devops) — 服务器自愈、工作流自动化
-- [生产力](#生产力) — 邮件整理、日程管理、客户服务、个人助理
-- [研究与学习](#研究与学习) — 知识库、市场调研、竞品分析、论文发现
-- [金融与交易](#金融与交易) — 预测市场模拟交易
+- **[🇨🇳 中国特色用例](#-中国特色用例)** — 22 个国内生态用例
+  - [平台机器人](#平台机器人) (4) — 飞书、钉钉、企业微信等 IM 平台 AI 接入
+  - [内容创作与发布](#内容创作与发布) (3) — 小红书、公众号、播客全流程自动化
+  - [数据研究与监控](#数据研究与监控) (7) — A 股、财报、竞品、论文、中文互联网研究
+  - [办公与客户服务](#办公与客户服务) (4) — 邮件、会议、多渠道客服、电商多 Agent
+  - [个人助理与智能体架构](#个人助理与智能体架构) (4) — 早间简报、人格档案、多 Agent 编排
+- **[🌐 通用场景](#-通用场景)** — 国际用例合集（部分含国内适配）
+  - [社交媒体](#社交媒体) (4) — Reddit、YouTube、X 等平台内容聚合
+  - [创意与构建](#创意与构建) (3) — 内容创作流水线、从零构建产品
+  - [基础设施与 DevOps](#基础设施与-devops) (4) — 服务器自愈、工作流编排、可观测性
+  - [生产力](#生产力) (16) — 邮件、日程、笔记、CRM、个人助理
+  - [研究与学习](#研究与学习) (9) — 知识库、市场调研、论文发现、竞品分析
+  - [金融与交易](#金融与交易) (1) — 预测市场模拟交易
 
 ---
 
@@ -117,7 +123,11 @@
 
 ## 🇨🇳 中国特色用例
 
-> 为中国工具生态设计或适配的用例，使用飞书、钉钉、企业微信、小红书等国内平台。标注"适配"的用例在国际版基础上增加了国内方案。
+> 为中国工具生态设计或适配的用例，使用飞书、钉钉、企业微信、小红书等国内平台。标注"适配"的用例在国际版基础上增加了国内方案。共 22 个，按场景分 5 类。
+
+### 平台机器人
+
+把 OpenClaw 接入国内 IM 和办公平台，在日常对话中使用 AI。
 
 | 名称 | 描述 | 难度 |
 |------|------|:---:|
@@ -125,28 +135,60 @@
 | [飞书全能操作台（Lark CLI）](usecases/cn-feishu-lark-cli.md) | 让 AI Agent 以你的身份操作飞书——搜文档、读妙记、查日历、发消息，覆盖 11 个领域 200+ 命令 | ⭐ |
 | [钉钉 AI 助手](usecases/cn-dingtalk-ai-assistant.md) | 把 OpenClaw 部署为钉钉机器人，Stream 模式无需公网 IP | ⭐⭐ |
 | [企业微信 AI 助手](usecases/cn-wecom-ai-assistant.md) | 在企业微信中使用 AI，通过微信插件让个人微信也能用 | ⭐⭐ |
-| [早间简报（适配）](usecases/custom-morning-brief.md) | 每日定时推送简报到飞书/钉钉，支持中文新闻源和 cron 配置 | ⭐ |
+
+### 内容创作与发布
+
+从选题、写作、排版到发布的自动化流水线。
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
+| [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
+| [微信公众号自动发布](usecases/cn-wechat-mp-automation.md) | Markdown 转排版 + 草稿箱推送，含账号权限矩阵与 IP 白名单配置 | ⭐⭐ |
+| [播客制作流水线（适配）](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（小宇宙/喜马拉雅/B站） | ⭐⭐ |
+
+### 数据研究与监控
+
+商业数据、学术论文、互联网内容的采集与分析。
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
+| [A 股每日行情监控](usecases/cn-a-share-monitor.md) | 盘前简报 + 盘后复盘 + 板块资金流向，AKShare/MCP 数据源 | ⭐⭐ |
+| [AI 财报追踪器（适配）](usecases/earnings-tracker.md) | A 股财报追踪，AKShare 免费数据源 + 业绩预告/快报自动化 | ⭐⭐ |
+| [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
+| [开发前创意验证器（适配）](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品（百度指数/微信指数/V2EX/少数派） | ⭐⭐ |
+| [中文互联网 30 天研究](usecases/cn-internet-research-30days.md) | 8 大中文平台（微博/B站/知乎/抖音/小红书/微信/百度/头条）内容聚合研究 | ⭐⭐ |
+| [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
+| [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
+
+### 办公与客户服务
+
+企业内部工作流、会议协作、对外客服。
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
 | [办公自动化套件](usecases/cn-office-automation.md) | 邮件管理、文件整理、会议纪要、周报生成，支持 163/QQ/Outlook | ⭐⭐ |
 | [会议纪要与待办自动化（适配）](usecases/meeting-notes-action-items.md) | 会议转录自动生成纪要并创建任务（飞书妙记/腾讯会议/钉钉） | ⭐⭐ |
 | [多渠道 AI 客户服务（适配）](usecases/multi-channel-customer-service.md) | 企业微信/抖音/小红书多渠道客服自动化 | ⭐⭐⭐ |
-| [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
-| [播客制作流水线（适配）](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（小宇宙/喜马拉雅/B站） | ⭐⭐ |
-| [AI 财报追踪器（适配）](usecases/earnings-tracker.md) | A 股财报追踪，AKShare 免费数据源 + 业绩预告/快报自动化 | ⭐⭐ |
-| [开发前创意验证器（适配）](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品（百度指数/微信指数/V2EX/少数派） | ⭐⭐ |
+| [电商多 Agent 架构](usecases/cn-ecommerce-multi-agent.md) | 多 Agent 绑定飞书群实现电商角色分工，4 个 Skill 覆盖销售/库存/客户全场景 | ⭐⭐ |
+
+### 个人助理与智能体架构
+
+日常推送、人格档案、多智能体编排。
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
+| [早间简报（适配）](usecases/custom-morning-brief.md) | 每日定时推送简报到飞书/钉钉，支持中文新闻源和 cron 配置 | ⭐ |
+| [数字人格蒸馏（适配）](usecases/digital-persona-distillation.md) | 从 12+ 平台聊天记录提取 4 维人格档案，含飞书/微信采集和 PIPL 提醒 | ⭐⭐⭐ |
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
 | [Agent Swarm 一人开发团队（适配）](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队，全自动化开发流水线 | ⭐⭐⭐ |
-| [电商多 Agent 架构](usecases/cn-ecommerce-multi-agent.md) | 多 Agent 绑定飞书群实现电商角色分工，4 个 Skill 覆盖销售/库存/客户全场景 | ⭐⭐ |
-| [A 股每日行情监控](usecases/cn-a-share-monitor.md) | 盘前简报 + 盘后复盘 + 板块资金流向，AKShare/MCP 数据源 | ⭐⭐ |
-| [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
-| [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
-| [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
-| [微信公众号自动发布](usecases/cn-wechat-mp-automation.md) | Markdown 转排版 + 草稿箱推送，含账号权限矩阵与 IP 白名单配置 | ⭐⭐ |
-| [中文互联网 30 天研究](usecases/cn-internet-research-30days.md) | 8 大中文平台（微博/B站/知乎/抖音/小红书/微信/百度/头条）内容聚合研究 | ⭐⭐ |
-| [数字人格蒸馏（适配）](usecases/digital-persona-distillation.md) | 从 12+ 平台聊天记录提取 4 维人格档案，含飞书/微信采集和 PIPL 提醒 | ⭐⭐⭐ |
 
 ---
 
-## 社交媒体
+## 🌐 通用场景
+
+> OpenClaw 国际社区贡献的通用用例，按场景分类。部分用例已在文件底部补充了国内适配章节。
+
+### 社交媒体
 
 > 自动聚合你关心的内容，告别信息焦虑
 
@@ -157,7 +199,7 @@
 | [X 账号分析](usecases/x-account-analysis.md) | 获取你的 X（原 Twitter）账号的定性分析 | ⭐⭐ |
 | [多源科技新闻摘要](usecases/multi-source-tech-news-digest.md) | 自动聚合 109+ 来源的科技新闻，支持质量评分和多渠道分发 | ⭐⭐ |
 
-## 创意与构建
+### 创意与构建
 
 > 让 AI 智能体帮你创作内容、从零构建产品
 
@@ -167,7 +209,7 @@
 | [YouTube 内容流水线](usecases/youtube-content-pipeline.md) | 为 YouTube 频道自动化视频创意发掘、研究和追踪 | ⭐⭐⭐ |
 | [多智能体内容工厂](usecases/content-factory.md) | 在 Discord 中运行研究、写作、设计三个智能体组成的内容流水线 | ⭐⭐⭐ |
 
-## 基础设施与 DevOps
+### 基础设施与 DevOps
 
 > 让服务器自己修自己，你只管睡觉
 
@@ -178,7 +220,7 @@
 | [自愈家庭服务器](usecases/self-healing-home-server.md) | 运行始终在线的基础设施智能体，自动发现并修复故障 | ⭐⭐⭐ |
 | [Agent Swarm 一人开发团队](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队实现全自动化开发流水线（国内适配） | ⭐⭐⭐ |
 
-## 生产力
+### 生产力
 
 > 把重复性工作交给 AI，专注于真正重要的事
 
@@ -201,7 +243,7 @@
 | [多智能体专业团队](usecases/multi-agent-team.md) | 4 个专业 AI 智能体（战略+开发+营销+商务）作为你的虚拟团队 | ⭐⭐⭐ |
 | [数字人格蒸馏](usecases/digital-persona-distillation.md) | 从 12+ 平台聊天记录提取 4 维人格档案（国内适配） | ⭐⭐⭐ |
 
-## 研究与学习
+### 研究与学习
 
 > 让 AI 帮你整理知识、追踪市场、发现机会
 
@@ -217,7 +259,7 @@
 | [arXiv 论文阅读与 LaTeX 写作](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，无需本地 TeX 环境（国内适配） | ⭐⭐ |
 | [中文互联网 30 天研究](usecases/cn-internet-research-30days.md) | 8 大中文平台内容聚合研究，三级降级策略，零配置可用 4 个免费平台 | ⭐⭐ |
 
-## 金融与交易
+### 金融与交易
 
 > 用 AI 在预测市场上做模拟交易和策略回测
 
