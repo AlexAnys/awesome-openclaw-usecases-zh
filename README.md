@@ -1,16 +1,16 @@
 <div align="center">
 
-<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例与案例合集 - 47 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
+<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例与案例合集 - 46 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
 
 <br/>
 <br/>
 
-<p><strong>47 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
+<p><strong>46 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-47-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-46-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -49,7 +49,7 @@
 - [基础设施与 DevOps](#基础设施与-devops) — 服务器自愈、工作流自动化
 - [生产力](#生产力) — 邮件整理、日程管理、客户服务、个人助理
 - [研究与学习](#研究与学习) — 知识库、市场调研、竞品分析、论文发现
-- [金融与交易](#金融与交易) — 券商交易助手、预测市场模拟交易
+- [金融与交易](#金融与交易) — 预测市场模拟交易
 
 ---
 
@@ -140,7 +140,6 @@
 | [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
 | [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
 | [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
-| [券商交易助手（适配）](usecases/brokerage-trading-assistant.md) | IBKR CLI 预览优先安全交易，持仓/盈亏/行情/下单全覆盖，富途/老虎替代方案 | ⭐⭐ |
 
 ---
 
@@ -215,11 +214,10 @@
 
 ## 金融与交易
 
-> 用 AI 管理券商账户、辅助交易操作、做模拟交易和策略回测
+> 用 AI 在预测市场上做模拟交易和策略回测
 
 | 名称 | 描述 | 难度 |
 |------|------|:---:|
-| [券商交易助手](usecases/brokerage-trading-assistant.md) | IBKR CLI 预览优先安全下单，持仓/盈亏/行情/期权全覆盖（国内适配） | ⭐⭐ |
 | [Polymarket 自动驾驶](usecases/polymarket-autopilot.md) | 自动化预测市场模拟交易，带回测、策略分析和每日绩效报告 | ⭐⭐⭐ |
 
 
