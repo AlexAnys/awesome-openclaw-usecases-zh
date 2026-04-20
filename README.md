@@ -1,16 +1,16 @@
 <div align="center">
 
-<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例与案例合集 - 46 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
+<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例与案例合集 - 49 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
 
 <br/>
 <br/>
 
-<p><strong>46 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
+<p><strong>49 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-46-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-49-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -36,7 +36,7 @@
 
 </details>
 
-> **2026.3.30 更新**：新增飞书全能操作台（Lark CLI 官方开源）、A 股行情监控、竞品分析、HuggingFace 论文发现、arXiv+LaTeX 写作共 5 个用例，中国特色用例扩充至 19 个。详见 [中国特色用例](#-中国特色用例)。
+> **2026.4.20 更新**：新增中文互联网研究、微信公众号自动发布、数字人格蒸馏 3 个用例，中国特色用例扩充至 22 个。详见 [中国特色用例](#-中国特色用例)。
 
 ---
 
@@ -140,6 +140,9 @@
 | [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
 | [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
 | [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
+| [微信公众号自动发布](usecases/cn-wechat-mp-automation.md) | Markdown 转排版 + 草稿箱推送，含账号权限矩阵与 IP 白名单配置 | ⭐⭐ |
+| [中文互联网 30 天研究](usecases/cn-internet-research-30days.md) | 8 大中文平台（微博/B站/知乎/抖音/小红书/微信/百度/头条）内容聚合研究 | ⭐⭐ |
+| [数字人格蒸馏（适配）](usecases/digital-persona-distillation.md) | 从 12+ 平台聊天记录提取 4 维人格档案，含飞书/微信采集和 PIPL 提醒 | ⭐⭐⭐ |
 
 ---
 
@@ -196,6 +199,7 @@
 | [动态仪表板](usecases/dynamic-dashboard.md) | 实时仪表板，子智能体并行从 API、数据库和社交媒体获取数据 | ⭐⭐⭐ |
 | [自主项目管理](usecases/autonomous-project-management.md) | 使用 STATE.yaml 模式协调多智能体项目，无需人工编排 | ⭐⭐⭐ |
 | [多智能体专业团队](usecases/multi-agent-team.md) | 4 个专业 AI 智能体（战略+开发+营销+商务）作为你的虚拟团队 | ⭐⭐⭐ |
+| [数字人格蒸馏](usecases/digital-persona-distillation.md) | 从 12+ 平台聊天记录提取 4 维人格档案（国内适配） | ⭐⭐⭐ |
 
 ## 研究与学习
 
@@ -211,6 +215,7 @@
 | [竞争对手分析与价格监控](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 构建竞品周报，月 $1.20 替代 $150 订阅（国内适配） | ⭐⭐ |
 | [HuggingFace 论文发现](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选、元数据浏览、社区信号 + arXiv 深读（国内适配） | ⭐ |
 | [arXiv 论文阅读与 LaTeX 写作](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，无需本地 TeX 环境（国内适配） | ⭐⭐ |
+| [中文互联网 30 天研究](usecases/cn-internet-research-30days.md) | 8 大中文平台内容聚合研究，三级降级策略，零配置可用 4 个免费平台 | ⭐⭐ |
 
 ## 金融与交易
 
