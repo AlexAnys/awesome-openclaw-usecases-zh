@@ -43,24 +43,25 @@ cd social-auto-upload
 
 # 推荐用 uv 管理环境（也可以用 pip）
 uv sync
-# 或者：python3 -m venv .venv && source .venv/bin/activate && pip install -e .
 
-# 安装浏览器驱动
-playwright install chromium
+# 安装浏览器驱动（uv 环境下用 uv run 调用）
+uv run playwright install chromium
 ```
+
+> 也可以用传统 venv：`python3 -m venv .venv && source .venv/bin/activate && pip install -e . && playwright install chromium`，之后命令不需要 `uv run` 前缀。
 
 验证安装：
 
 ```bash
-# 查看 CLI 帮助（命令名可能因版本不同）
+# uv 环境
+uv run sau --help
+# 或已激活的 venv
 sau --help
-# 或
-python -m social_auto_upload --help
 ```
 
 ### 第二步：登录各平台
 
-每个平台只需登录一次，cookie 自动保存到 `cookies/` 目录：
+每个平台只需登录一次，cookie 自动保存到 `cookies/` 目录（以下命令在 uv 环境下需加 `uv run` 前缀，激活 venv 后可直接执行）：
 
 ```bash
 # 抖音——终端弹出二维码，用手机抖音扫码
