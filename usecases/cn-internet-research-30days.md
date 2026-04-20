@@ -26,7 +26,7 @@
 
 ## 所需技能
 
-[last30days-skill-cn](https://github.com/Jesseovo/last30days-skill-cn)（150+ stars，MIT 开源）—— 基于 [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)（20,000+ stars）的中文本土化版本，由 Jesse ([@Jesseovo](https://github.com/Jesseovo)) 开发维护。v2.0 集成 MediaCrawler 爬虫引擎思路，覆盖微博、小红书、B站、知乎、抖音、微信、百度、头条。
+[last30days-skill-cn](https://github.com/Jesseovo/last30days-skill-cn)（240+ stars，开源，见 LICENSE）—— 基于 [mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)（22,000+ stars）的中文本土化版本，由 Jesse ([@Jesseovo](https://github.com/Jesseovo)) 开发维护。v2.0 集成 MediaCrawler 爬虫引擎思路，覆盖微博、小红书、B站、知乎、抖音、微信、百度、头条。
 
 Python 依赖：
 
@@ -157,7 +157,7 @@ BAIDU_SECRET_KEY=
 
 ## 相关链接
 
-- [last30days-skill-cn - GitHub](https://github.com/Jesseovo/last30days-skill-cn) — 中文互联网 8 大平台研究引擎（150+ stars）
+- [last30days-skill-cn - GitHub](https://github.com/Jesseovo/last30days-skill-cn) — 中文互联网 8 大平台研究引擎（240+ stars）
 - [last30days-skill - GitHub](https://github.com/mvanhorn/last30days-skill) — 原版英文项目，覆盖 Reddit/X/YouTube/HN 等（20,000+ stars）
 - [汇智网 - /last30days 趋势研究技能](https://www.hubwiz.com/blog/last30days-trend-research-skill/) — 原版工具中文介绍
 - [MediaCrawler - GitHub](https://github.com/NanmiCoder/MediaCrawler) — v2.0 爬虫引擎的技术灵感来源
