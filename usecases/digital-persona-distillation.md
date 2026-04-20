@@ -7,7 +7,7 @@
 ## 功能介绍
 
 - **四维蒸馏**：从聊天记录中提取程序性知识（Procedure）、互动风格（Interaction）、记忆经历（Memory）、性格价值观（Personality）四个维度，而非简单的关键词或嵌入向量
-- **12+ 平台采集**：飞书、钉钉、微信、iMessage、Telegram、WhatsApp、Slack、Discord、Email、Twitter/X、Google Takeout、手动文件导入，每个平台有独立的 Python 采集器
+- **12+ 平台采集**：飞书、钉钉、微信、iMessage、Telegram、WhatsApp、Slack、Discord、Email、Twitter/X、社交媒体归档（CLI 平台名 `social`，含 Google Takeout 等）、手动文件导入，每个平台有独立的 Python 采集器
 - **7 种角色模板**：自己、同事、导师、亲人、伴侣/前任、朋友、公众人物——不同角色的蒸馏侧重和伦理要求不同
 - **证据分级**：每条提取结果标注 `verbatim`（原话）、`artifact`（文档留痕）或 `impression`（他人印象），矛盾之处不强行统一，单独记录在 `conflicts.md`
 - **输出即 Skill**：蒸馏产物是一个标准的 OpenClaw Skill 目录（SKILL.md + 维度文件 + manifest.json），AI 加载后直接可用
@@ -279,4 +279,4 @@ immortal-skill 原生支持国内主流平台，无需额外适配：
 
 ---
 
-**原始项目**：[immortal-skill](https://github.com/agenmod/immortal-skill)（491 stars，MIT 协议）
+**原始项目**：[immortal-skill](https://github.com/agenmod/immortal-skill)（600+ stars，MIT 协议）
