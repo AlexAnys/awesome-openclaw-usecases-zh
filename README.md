@@ -117,7 +117,11 @@
 
 ## 🇨🇳 中国特色用例
 
-> 为中国工具生态设计或适配的用例，使用飞书、钉钉、企业微信、小红书等国内平台。标注"适配"的用例在国际版基础上增加了国内方案。
+> 为中国工具生态设计或适配的用例，使用飞书、钉钉、企业微信、小红书等国内平台。标注"适配"的用例在国际版基础上增加了国内方案。共 22 个，按场景分 5 类。
+
+### 🤖 平台机器人
+
+把 OpenClaw 接入国内 IM 和办公平台，在日常对话中使用 AI。
 
 | 名称 | 描述 | 难度 |
 |------|------|:---:|
@@ -125,24 +129,52 @@
 | [飞书全能操作台（Lark CLI）](usecases/cn-feishu-lark-cli.md) | 让 AI Agent 以你的身份操作飞书——搜文档、读妙记、查日历、发消息，覆盖 11 个领域 200+ 命令 | ⭐ |
 | [钉钉 AI 助手](usecases/cn-dingtalk-ai-assistant.md) | 把 OpenClaw 部署为钉钉机器人，Stream 模式无需公网 IP | ⭐⭐ |
 | [企业微信 AI 助手](usecases/cn-wecom-ai-assistant.md) | 在企业微信中使用 AI，通过微信插件让个人微信也能用 | ⭐⭐ |
-| [早间简报（适配）](usecases/custom-morning-brief.md) | 每日定时推送简报到飞书/钉钉，支持中文新闻源和 cron 配置 | ⭐ |
+
+### 📱 内容创作与发布
+
+从选题、写作、排版到发布的自动化流水线。
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
+| [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
+| [微信公众号自动发布](usecases/cn-wechat-mp-automation.md) | Markdown 转排版 + 草稿箱推送，含账号权限矩阵与 IP 白名单配置 | ⭐⭐ |
+| [播客制作流水线（适配）](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（小宇宙/喜马拉雅/B站） | ⭐⭐ |
+
+### 📊 数据研究与监控
+
+商业数据、学术论文、互联网内容的采集与分析。
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
+| [A 股每日行情监控](usecases/cn-a-share-monitor.md) | 盘前简报 + 盘后复盘 + 板块资金流向，AKShare/MCP 数据源 | ⭐⭐ |
+| [AI 财报追踪器（适配）](usecases/earnings-tracker.md) | A 股财报追踪，AKShare 免费数据源 + 业绩预告/快报自动化 | ⭐⭐ |
+| [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
+| [开发前创意验证器（适配）](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品（百度指数/微信指数/V2EX/少数派） | ⭐⭐ |
+| [中文互联网 30 天研究](usecases/cn-internet-research-30days.md) | 8 大中文平台（微博/B站/知乎/抖音/小红书/微信/百度/头条）内容聚合研究 | ⭐⭐ |
+| [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
+| [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
+
+### 💼 办公与客户服务
+
+企业内部工作流、会议协作、对外客服。
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
 | [办公自动化套件](usecases/cn-office-automation.md) | 邮件管理、文件整理、会议纪要、周报生成，支持 163/QQ/Outlook | ⭐⭐ |
 | [会议纪要与待办自动化（适配）](usecases/meeting-notes-action-items.md) | 会议转录自动生成纪要并创建任务（飞书妙记/腾讯会议/钉钉） | ⭐⭐ |
 | [多渠道 AI 客户服务（适配）](usecases/multi-channel-customer-service.md) | 企业微信/抖音/小红书多渠道客服自动化 | ⭐⭐⭐ |
-| [小红书内容自动化](usecases/cn-xiaohongshu-automation.md) | 从选题、文案、封面图到定时发布的全流程自动化 | ⭐ |
-| [播客制作流水线（适配）](usecases/podcast-production-pipeline.md) | 从选题到发布的全流程播客制作自动化（小宇宙/喜马拉雅/B站） | ⭐⭐ |
-| [AI 财报追踪器（适配）](usecases/earnings-tracker.md) | A 股财报追踪，AKShare 免费数据源 + 业绩预告/快报自动化 | ⭐⭐ |
-| [开发前创意验证器（适配）](usecases/pre-build-idea-validator.md) | 编码前自动扫描竞品（百度指数/微信指数/V2EX/少数派） | ⭐⭐ |
+| [电商多 Agent 架构](usecases/cn-ecommerce-multi-agent.md) | 多 Agent 绑定飞书群实现电商角色分工，4 个 Skill 覆盖销售/库存/客户全场景 | ⭐⭐ |
+
+### 🧠 个人助理与智能体架构
+
+日常推送、人格档案、多智能体编排。
+
+| 名称 | 描述 | 难度 |
+|------|------|:---:|
+| [早间简报（适配）](usecases/custom-morning-brief.md) | 每日定时推送简报到飞书/钉钉，支持中文新闻源和 cron 配置 | ⭐ |
+| [数字人格蒸馏（适配）](usecases/digital-persona-distillation.md) | 从 12+ 平台聊天记录提取 4 维人格档案，含飞书/微信采集和 PIPL 提醒 | ⭐⭐⭐ |
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
 | [Agent Swarm 一人开发团队（适配）](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队，全自动化开发流水线 | ⭐⭐⭐ |
-| [电商多 Agent 架构](usecases/cn-ecommerce-multi-agent.md) | 多 Agent 绑定飞书群实现电商角色分工，4 个 Skill 覆盖销售/库存/客户全场景 | ⭐⭐ |
-| [A 股每日行情监控](usecases/cn-a-share-monitor.md) | 盘前简报 + 盘后复盘 + 板块资金流向，AKShare/MCP 数据源 | ⭐⭐ |
-| [竞争对手分析与价格监控（适配）](usecases/competitive-intelligence.md) | Perplexity + Firecrawl MCP 竞品周报，百度指数/微信指数/飞书推送 | ⭐⭐ |
-| [HuggingFace 论文发现（适配）](usecases/hf-papers-research-discovery.md) | 每日热门 ML 论文筛选 + arXiv 深读，HF 镜像站/飞书推送 | ⭐ |
-| [arXiv 论文阅读与 LaTeX 写作（适配）](usecases/arxiv-paper-reader-latex-writer.md) | 论文获取/章节浏览/摘要速扫 + LaTeX 即时编译，中文模板/Docker 镜像适配 | ⭐⭐ |
-| [微信公众号自动发布](usecases/cn-wechat-mp-automation.md) | Markdown 转排版 + 草稿箱推送，含账号权限矩阵与 IP 白名单配置 | ⭐⭐ |
-| [中文互联网 30 天研究](usecases/cn-internet-research-30days.md) | 8 大中文平台（微博/B站/知乎/抖音/小红书/微信/百度/头条）内容聚合研究 | ⭐⭐ |
-| [数字人格蒸馏（适配）](usecases/digital-persona-distillation.md) | 从 12+ 平台聊天记录提取 4 维人格档案，含飞书/微信采集和 PIPL 提醒 | ⭐⭐⭐ |
 
 ---
 
