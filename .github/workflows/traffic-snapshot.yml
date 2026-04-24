@@ -1,0 +1,90 @@
+name: Traffic Snapshot
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # 每天 UTC 01:00（北京时间 09:00）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch traffic data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -e
+          DATE=$(date -u +%Y-%m-%d)
+          mkdir -p stats
+
+          echo "## Snapshot $DATE" > stats/latest.md
+          echo "" >> stats/latest.md
+
+          # 基础指标
+          gh api "repos/$REPO" --jq '{stars: .stargazers_count, forks: .forks_count, watchers: .subscribers_count, open_issues: .open_issues_count}' > /tmp/basic.json
+          echo "### 基础指标" >> stats/latest.md
+          echo '```json' >> stats/latest.md
+          cat /tmp/basic.json >> stats/latest.md
+          echo '```' >> stats/latest.md
+          echo "" >> stats/latest.md
+
+          # 14 天 views（保留 count/uniques）
+          gh api "repos/$REPO/traffic/views" > /tmp/views.json || echo '{"error":"no-permission"}' > /tmp/views.json
+          echo "### Views（14 天）" >> stats/latest.md
+          echo '```json' >> stats/latest.md
+          jq '{count, uniques, days: (.views // [])}' /tmp/views.json >> stats/latest.md
+          echo '```' >> stats/latest.md
+          echo "" >> stats/latest.md
+
+          # 14 天 clones
+          gh api "repos/$REPO/traffic/clones" > /tmp/clones.json || echo '{"error":"no-permission"}' > /tmp/clones.json
+          echo "### Clones（14 天）" >> stats/latest.md
+          echo '```json' >> stats/latest.md
+          jq '{count, uniques}' /tmp/clones.json >> stats/latest.md
+          echo '```' >> stats/latest.md
+          echo "" >> stats/latest.md
+
+          # Top referrers
+          gh api "repos/$REPO/traffic/popular/referrers" > /tmp/refs.json || echo '[]' > /tmp/refs.json
+          echo "### Top Referrers（来源）" >> stats/latest.md
+          echo '```json' >> stats/latest.md
+          cat /tmp/refs.json >> stats/latest.md
+          echo '```' >> stats/latest.md
+          echo "" >> stats/latest.md
+
+          # Top paths（关键词流量核心——哪些用例被访问）
+          gh api "repos/$REPO/traffic/popular/paths" > /tmp/paths.json || echo '[]' > /tmp/paths.json
+          echo "### Top Paths（访问量 Top 10 页面）" >> stats/latest.md
+          echo '```json' >> stats/latest.md
+          cat /tmp/paths.json >> stats/latest.md
+          echo '```' >> stats/latest.md
+
+          # 追加到 JSONL 历史
+          DATE_ISO=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          jq -n \
+            --arg date "$DATE_ISO" \
+            --slurpfile basic /tmp/basic.json \
+            --slurpfile views /tmp/views.json \
+            --slurpfile clones /tmp/clones.json \
+            --slurpfile refs /tmp/refs.json \
+            --slurpfile paths /tmp/paths.json \
+            '{date: $date, basic: $basic[0], views: $views[0], clones: $clones[0], referrers: $refs[0], paths: $paths[0]}' \
+            >> stats/history.jsonl
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stats/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "stats: 每日流量快照 $(date -u +%Y-%m-%d)"
+            git push
+          fi
