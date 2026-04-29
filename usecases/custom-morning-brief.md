@@ -1,3 +1,30 @@
+---
+id: custom-morning-brief
+title: 自定义早间简报
+category: personal-assistant
+language: zh
+difficulty: 1
+risk: [read_only, external_write]
+agent_compat:
+  openclaw: native
+  hermes: adapter
+  claude_code: unverified
+  cursor: unverified
+requires:
+  tools: [cron, web, send_message]
+  skills: []
+  accounts: []
+  env: []
+  network: any
+delivery_targets: [telegram, discord, slack, local]
+cost: free
+verified:
+  last_run: null
+  agent: null
+  result: unverified
+  evidence: null
+---
+
 # 自定义早间简报
 
 你每天醒来后的前 30 分钟都在追赶信息——刷新闻、查日历、检查待办事项、试图弄清今天什么最重要。如果这一切都已经完成，以一条短信的形式等着你呢？

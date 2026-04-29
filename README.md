@@ -6,6 +6,7 @@
 <br/>
 
 <p><strong>49 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
+<p><sub>OpenClaw 原生 · Hermes 适配实验中 · 其他 Agent 欢迎贡献</sub></p>
 
 <br/>
 
@@ -14,6 +15,9 @@
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-Native-success?style=flat-square)
+![Hermes](https://img.shields.io/badge/Hermes-Adapter%20Experimental-blue?style=flat-square)
+![Agent Contract](https://img.shields.io/badge/Agent%20Contract-Experimental-lightgrey?style=flat-square)
 [![GitHub](https://img.shields.io/badge/主仓库-GitHub-black?style=flat-square&logo=github)](https://github.com/AlexAnys/awesome-openclaw-usecases-zh)
 [![AtomGit](https://img.shields.io/badge/国内托管-AtomGit-orange?style=flat-square)](https://atomgit.com/alex_anys/awesome-openclaw-usecases-zh)
 
@@ -76,6 +80,18 @@
 
 </details>
 
+### 用其他智能体跑这些用例
+
+本合集以 OpenClaw 为参考实现，但很多场景本质上是 agent-agnostic 的：只要你的智能体具备终端、文件、定时任务、网页/浏览器和消息推送能力，就可以通过适配层复用。
+
+| 智能体 | 状态 | 入口 |
+|---|---|---|
+| OpenClaw | ✅ 原生 | 直接阅读 [usecases/](./usecases/) |
+| Hermes | 🔵 第一批适配中 | [adapters/hermes/](./adapters/hermes/) — 只描述执行差异 |
+| 其他智能体 | ⚪ 欢迎贡献 | 可参考 [AGENT-CONTRACT.md](./AGENT-CONTRACT.md) 添加适配文档 |
+
+> 想为其他 agent 框架贡献适配？先看 [AGENT-CONTRACT.md](./AGENT-CONTRACT.md) 和 [贡献指南](CONTRIBUTING.md)。
+
 <details>
 <summary><strong>📖 核心概念一看就懂（点击展开）</strong></summary>
 
@@ -108,6 +124,7 @@
 | **所需技能** | 需要安装哪些插件 |
 | **如何设置** | 手把手教你配置（含可复制的提示词） |
 | **实用建议** | 踩过的坑和最佳实践 |
+| **Agent 适配** | 如有 Hermes 等 adapter 文档，会说明执行差异和风险 |
 
 > 💡 **提示**：代码块中的英文 prompt（提示词）建议直接复制使用，效果最佳。每段 prompt 上方都有中文说明帮你理解其作用。
 

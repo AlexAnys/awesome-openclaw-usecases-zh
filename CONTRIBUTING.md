@@ -46,6 +46,22 @@
 
 补充实践经验、修正过时信息、改进表述。直接修改对应文件即可。
 
+### 4. 添加 Agent 适配文档
+
+如果你想说明某个用例如何在 Hermes、Claude Code、Cursor 等其他智能体中执行，请添加 adapter 文档，而不是复制一份完整用例：
+
+```text
+adapters/<agent>/usecases/<用例文件名>.md
+```
+
+要求：
+
+- 原用例仍以 `usecases/*.md` 为准，adapter 只写执行差异
+- 必须说明适配状态：`native` / `adapter` / `partial` / `unverified` / `not_supported`
+- 必须标注风险标签：`read_only` / `writes_local` / `external_write` / `public_post` / `credential_heavy` / `financial` / `privacy` / `regulated`
+- 涉及公开发布、金融、医疗、隐私、外部写操作的适配，必须默认 dry-run 或人工确认
+- 可选的机器可读字段见 [AGENT-CONTRACT.md](AGENT-CONTRACT.md)
+
 ---
 
 ## 用例文件格式

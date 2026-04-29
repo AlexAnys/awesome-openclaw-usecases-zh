@@ -1,3 +1,30 @@
+---
+id: cn-office-automation
+title: 办公自动化套件
+category: office-cs
+language: zh
+difficulty: 2
+risk: [writes_local, credential_heavy]
+agent_compat:
+  openclaw: native
+  hermes: native
+  claude_code: unverified
+  cursor: unverified
+requires:
+  tools: [file_io, terminal, cron, send_message]
+  skills: [imap-smtp-email]
+  accounts: [imap]
+  env: []
+  network: any
+delivery_targets: [local, email, slack, telegram]
+cost: free
+verified:
+  last_run: null
+  agent: null
+  result: unverified
+  evidence: null
+---
+
 # 办公自动化套件
 
 知识工作者每天花 2-3 小时在重复性办公任务上：筛选邮件、整理文件、写会议纪要、编周报。每项单独不难，但加起来消耗大量时间和精力。
