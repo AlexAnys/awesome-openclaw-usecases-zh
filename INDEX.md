@@ -2,10 +2,13 @@
 
 49 个用例的扁平索引。每行 = 路径 / 一句话中文摘要 / 风险标签。Agent 可用本文件做仓库导航，无需 grep 文件名。
 
+> **维护约定**：新增或重命名 `usecases/*.md` 时必须同步更新本文件；标签可叠加。
+> **标签用途**：仅用于初筛和优先级判断，**不替代**执行前的权限、凭证、外部写入确认——按 [AGENTS.md](AGENTS.md) Reading Protocol 操作。
+
 ## 风险标签
 
 - `read-only` — 仅读取数据（不写本地、不发外部）
-- `writes-local` — 写入本地文件 / 工作区（无外发）
+- `writes-local` — 写入本地文件 / 工作区，**该项本身不涉及外发**（用例可能同时叠加 `external-api` 等其他标签）
 - `external-api` — 调用外部 API（消耗配额或费用）
 - `external-write` — 写入外部账户（发消息 / 推送 / 修改云端数据）
 - `public-post` — 在公共平台发布内容（小红书 / 公众号 / X / YouTube 等）
@@ -13,7 +16,7 @@
 - `privacy` — 处理个人聊天 / 健康 / 联系人等敏感数据
 - `financial` — 涉及财务、行情或交易决策
 
-执行任何 `external-*`、`public-post`、`financial` 标签的用例前，请按 [AGENTS.md](AGENTS.md) 的 Reading Protocol 先 dry-run 并取得用户确认。
+执行任何 `external-*`、`public-post`、`financial` 标签的用例前，按 [AGENTS.md](AGENTS.md) 的 Reading Protocol 先 dry-run 并取得用户确认。
 
 ---
 

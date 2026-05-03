@@ -1,11 +1,12 @@
 <div align="center">
 
-<img width="1500" height="500" alt="OpenClaw AI 智能体最佳用例与案例合集 - 49 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
+<img width="1500" height="500" alt="OpenClaw 与 Hermes 个人 AI 智能体最佳用例合集 - 49 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
 
 <br/>
 <br/>
 
-<p><strong>49 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
+<p><strong>49 个经过验证的真实场景，手把手教你用个人 AI 智能体自动化工作与生活</strong></p>
+<p><sub>OpenClaw 原生 · Hermes 适配中 · 其他个人智能体（Claude Code / Codex 等）按需扩展</sub></p>
 
 <br/>
 
@@ -23,11 +24,11 @@
 
 ---
 
-# Awesome OpenClaw 最佳案例合集（中文版）🇨🇳
+# Awesome 个人 AI 智能体案例合集 · OpenClaw / Hermes（中文版）🇨🇳
 
-> 解决 OpenClaw 普及的瓶颈：不是 ~~技能~~，而是找到 **能改善你生活的方式**。
+> 解决个人智能体普及的瓶颈：不是 ~~技能~~，而是找到 **能改善你生活的方式**。
 >
-> 一份面向中文用户的 OpenClaw 真实使用案例合集，包含社区验证的国际用例的中国适配，国内生态特色用例，从零入门。
+> 面向中文用户的个人 AI 智能体真实用例合集。以 **OpenClaw 为参考实现**写就，**Hermes 适配中**，其他个人智能体（Claude Code / Codex 等）可参照同一份用例执行——让"找一份能跑的中文 Hermes / OpenClaw 案例"成为一次搜索的事。
 
 <details>
 <summary><strong>📖 来源声明</strong></summary>
@@ -38,7 +39,7 @@
 
 > **2026.4.20 更新**：新增中文互联网研究、微信公众号自动发布、数字人格蒸馏 3 个用例，中国特色用例扩充至 22 个。详见 [中国特色用例](#-中国特色用例)。
 
-> **For AI agents / 给 AI Agent**：如果你是 AI 智能体（OpenClaw / Hermes / Claude Code / Codex 等），请先读 [AGENTS.md](AGENTS.md)。用例索引见 [INDEX.md](INDEX.md)，跨 agent 概念翻译见 [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md)。
+<sub>给 AI 智能体的入口（人类读者无需打开）：[AGENTS.md](AGENTS.md) · [INDEX.md](INDEX.md) · [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md)</sub>
 
 ---
 
