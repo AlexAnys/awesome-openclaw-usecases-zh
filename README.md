@@ -38,6 +38,8 @@
 
 > **2026.4.20 更新**：新增中文互联网研究、微信公众号自动发布、数字人格蒸馏 3 个用例，中国特色用例扩充至 22 个。详见 [中国特色用例](#-中国特色用例)。
 
+> **For AI agents / 给 AI Agent**：如果你是 AI 智能体（OpenClaw / Hermes / Claude Code / Codex 等），请先读 [AGENTS.md](AGENTS.md)。用例索引见 [INDEX.md](INDEX.md)，跨 agent 概念翻译见 [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md)。
+
 ---
 
 ## 🗂 目录

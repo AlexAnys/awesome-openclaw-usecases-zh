@@ -1,9 +1,6 @@
 # macOS
 .DS_Store
 
-# Internal project docs (not for public)
-CLAUDE.md
-
 # Local workflow & process docs
 skills/
 
