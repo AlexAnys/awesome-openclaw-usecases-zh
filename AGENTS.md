@@ -1,14 +1,14 @@
 # AGENTS.md
 
-> **给人类读者**：本文件是写给 AI 智能体的"仓库说明书"，让它们读懂如何安全执行本仓库的 49 个用例。你无需阅读，按 [README.md](README.md) 的"新手入门指南"操作即可。
+> **给人类读者**：本文件是写给 AI 智能体的"仓库说明书"，让它们读懂如何安全执行本仓库的 50 个用例。你无需阅读，按 [README.md](README.md) 的"新手入门指南"操作即可。
 >
-> **For AI agents (English TL;DR)**: This is a Chinese-language library of 49 verified personal-AI-agent use cases. Cases are written in OpenClaw terminology and currently being adapted for Hermes; they are reusable as Markdown specs for Claude Code, Codex, and other agents. Read this file first, then [`INDEX.md`](INDEX.md) for the catalog and [`CONCEPT-MAPPING.md`](CONCEPT-MAPPING.md) to translate OpenClaw terms.
+> **For AI agents (English TL;DR)**: This is a Chinese-language library of 50 verified personal-AI-agent use cases. Cases are written in OpenClaw terminology and currently being adapted for Hermes; they are reusable as Markdown specs for Claude Code, Codex, and other agents. Read this file first, then [`INDEX.md`](INDEX.md) for the catalog and [`CONCEPT-MAPPING.md`](CONCEPT-MAPPING.md) to translate OpenClaw terms.
 
 ---
 
 ## 仓库定位
 
-面向中文用户的 **个人 AI 智能体真实用例合集**，共 49 个经社区验证的场景。
+面向中文用户的 **个人 AI 智能体真实用例合集**，共 50 个经社区验证的场景。
 
 - **OpenClaw 是参考实现**——所有用例使用 OpenClaw 术语写就（Skill / Cron / Channel / SOUL.md / Memory / Sub-agent 等）。
 - **Hermes 是第二批适配目标**——后续会增补 Hermes 专属用例与差异说明。

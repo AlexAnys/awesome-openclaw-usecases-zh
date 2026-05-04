@@ -1,6 +1,6 @@
 # INDEX.md
 
-49 个用例的扁平索引。每行 = 路径 / 一句话中文摘要 / 风险标签。Agent 可用本文件做仓库导航，无需 grep 文件名。
+50 个用例的扁平索引。每行 = 路径 / 一句话中文摘要 / 风险标签。Agent 可用本文件做仓库导航，无需 grep 文件名。
 
 > **维护约定**：新增或重命名 `usecases/*.md` 时必须同步更新本文件；标签可叠加。
 > **标签用途**：仅用于初筛和优先级判断，**不替代**执行前的权限、凭证、外部写入确认——按 [AGENTS.md](AGENTS.md) Reading Protocol 操作。
@@ -20,7 +20,7 @@
 
 ---
 
-## 中国特色用例（22）
+## 中国特色用例（23）
 
 ### 平台机器人
 
@@ -68,6 +68,7 @@
 | [digital-persona-distillation.md](usecases/digital-persona-distillation.md) | 12+ 平台聊天记录提取 4 维人格档案，含 PIPL 合规提醒 | `privacy` `credential-heavy` |
 | [cn-multi-agent-operating-system.md](usecases/cn-multi-agent-operating-system.md) | OpenClaw 多智能体协作 OS（专业分工与稳定迭代） | `writes-local` |
 | [agent-swarm-dev-team.md](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队的全自动开发流水线 | `writes-local` `external-api` |
+| [multica-managed-agents.md](usecases/multica-managed-agents.md) | Multica 多 CLI 协作看板（OpenClaw + Claude Code + Codex + Hermes 同台协作） | `writes-local` `external-api` |
 
 ---
 
