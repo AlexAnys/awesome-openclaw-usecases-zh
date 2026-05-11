@@ -1,17 +1,17 @@
 <div align="center">
 
-<img width="1500" height="500" alt="OpenClaw 与 Hermes 个人 AI 智能体最佳用例合集 - 49 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
+<img width="1500" height="500" alt="OpenClaw 与 Hermes 个人 AI 智能体最佳用例合集 - 50 个真实场景" src="https://github.com/user-attachments/assets/4ae57dfb-4f18-4677-9136-43bf93017250" />
 
 <br/>
 <br/>
 
-<p><strong>49 个经过验证的真实场景，手把手教你用个人 AI 智能体自动化工作与生活</strong></p>
+<p><strong>50 个经过验证的真实场景，手把手教你用个人 AI 智能体自动化工作与生活</strong></p>
 <p><sub>OpenClaw 原生 · Hermes 适配中 · 其他个人智能体（Claude Code / Codex 等）按需扩展</sub></p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-49-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-50-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -37,6 +37,33 @@
 
 </details>
 
+<details>
+<summary><strong>💡 同一份用例,不同智能体</strong></summary>
+
+<br/>
+
+编程智能体和个人智能体的本质是一样的——能读文件、跑命令、调 API、按计划执行的 agent,做个人自动化和写代码没有区别。这意味着同一份用例可以跑在不同工具上。
+
+**它们能做同样的事:**
+
+读同一份 Markdown 用例 · 执行终端命令 · 读写本地文件 · 调用外部 API · 通过 MCP 连接工具
+
+**叫法不同,能力相通:**
+
+| 能力 | OpenClaw | Claude Code | Hermes | Codex |
+|---|---|---|---|---|
+| 定时任务 | `cron add` | `/schedule` | `cronjob` | Automations |
+| 技能/指令 | Skill | `commands/*.md` | `SKILL.md` | `skills/` |
+| IM 通道 | Channel 原生 | — webhook | gateway | — webhook |
+| 子智能体 | session spawn | `agents/*.md` | delegate | MCP |
+| 记忆 | MEMORY.md | auto-memory | memory store | AGENTS.md |
+
+一份[术语映射表](CONCEPT-MAPPING.md)就能翻译这些差异。50 个用例中约 40 个可在 Claude Code 或 Hermes 上直接或经映射执行;仅约 10 个(IM 机器人入口类)是 OpenClaw 独有。
+
+> 选你订阅的、信任的、能长期稳定运行的工具。用例描述的是场景,不是某个 CLI 的操作手册。
+
+</details>
+
 > **2026.4.20 更新**：新增中文互联网研究、微信公众号自动发布、数字人格蒸馏 3 个用例，中国特色用例扩充至 22 个。详见 [中国特色用例](#-中国特色用例)。
 
 <sub>给 AI 智能体的入口（人类读者无需打开）：[AGENTS.md](AGENTS.md) · [INDEX.md](INDEX.md) · [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md)</sub>
@@ -46,12 +73,12 @@
 ## 🗂 目录
 
 - [新手入门指南](#-新手入门指南)
-- **[🇨🇳 中国特色用例](#-中国特色用例)** — 22 个国内生态用例
+- **[🇨🇳 中国特色用例](#-中国特色用例)** — 23 个国内生态用例
   - [平台机器人](#平台机器人) (4) — 飞书、钉钉、企业微信等 IM 平台 AI 接入
   - [内容创作与发布](#内容创作与发布) (3) — 小红书、公众号、播客全流程自动化
   - [数据研究与监控](#数据研究与监控) (7) — A 股、财报、竞品、论文、中文互联网研究
   - [办公与客户服务](#办公与客户服务) (4) — 邮件、会议、多渠道客服、电商多 Agent
-  - [个人助理与智能体架构](#个人助理与智能体架构) (4) — 早间简报、人格档案、多 Agent 编排
+  - [个人助理与智能体架构](#个人助理与智能体架构) (5) — 早间简报、人格档案、多 Agent 编排、Multica 看板
 - **[🌐 通用场景](#-通用场景)** — 国际用例合集（部分含国内适配）
   - [社交媒体](#社交媒体) (4) — Reddit、YouTube、X 等平台内容聚合
   - [创意与构建](#创意与构建) (3) — 内容创作流水线、从零构建产品
@@ -126,7 +153,7 @@
 
 ## 🇨🇳 中国特色用例
 
-> 为中国工具生态设计或适配的用例，使用飞书、钉钉、企业微信、小红书等国内平台。标注"适配"的用例在国际版基础上增加了国内方案。共 22 个，按场景分 5 类。
+> 为中国工具生态设计或适配的用例，使用飞书、钉钉、企业微信、小红书等国内平台。标注"适配"的用例在国际版基础上增加了国内方案。共 23 个，按场景分 5 类。
 
 ### 平台机器人
 

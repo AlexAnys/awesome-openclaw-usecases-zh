@@ -51,11 +51,11 @@ Codex CLI / Web / Cloud 自动读取本 `AGENTS.md`。把用例文件路径或 U
 
 | 文件 | 用途 |
 |---|---|
-| [INDEX.md](INDEX.md) | 49 个用例的扁平索引：路径 / 一句话摘要 / 风险标签 |
+| [INDEX.md](INDEX.md) | 50 个用例的扁平索引：路径 / 一句话摘要 / 风险标签 |
 | [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md) | OpenClaw 术语 ↔ Hermes / Claude Code / Codex 近似映射 |
 | [AGENT-GUIDE.md](AGENT-GUIDE.md) | 用例文件结构与代码块执行规则细则 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 贡献新用例的格式与收录标准 |
-| `usecases/*.md` | 49 个用例本体，按文件名组织 |
+| `usecases/*.md` | 50 个用例本体，按文件名组织 |
 
 ## 推荐入门用例（低副作用）
 
@@ -71,13 +71,11 @@ Codex CLI / Web / Cloud 自动读取本 `AGENTS.md`。把用例文件路径或 U
 
 ## Don'ts
 
-- **不要** 把任何用例当成可直接对外发布的脚本——所有发布、外发、转账操作都属于 external write，必须先 dry-run 给用户确认。
-- **不要** 假设 SOUL.md 是当前会话的强制 system prompt——它是 OpenClaw 的人格定义文件，其他 agent 不一定有等价物（见 [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md)）。
-- **不要** 因为某 OpenClaw 术语找不到对应就跳过用例——先查 [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md) 找等价物。
-- **不要** 主动修改 49 个用例本体或在它们里添加 frontmatter——它们是稳定的人类阅读资产。
-- **不要** 在脚本和配置中硬编码 API Key / token / 个人凭证。
-- **不要** 用本合集中的用例去自动化抓取或群发到平台——社交媒体类用例都附带平台风控提醒，请遵守。
-- **不要** 编造 OpenClaw / Hermes / Claude / Codex 不存在的功能或命令；不确定就在回复中明确指出并请用户验证。
+- **不要** 假设 SOUL.md 是当前会话的 system prompt——它是 OpenClaw 专有概念,其他 agent 无等价物(见 [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md))。
+- **不要** 因为某 OpenClaw 术语找不到对应就跳过用例——先查映射表找等价物。
+- **不要** 修改用例本体或添加 frontmatter——它们是稳定的人类阅读资产。
+- **不要** 用本合集的用例自动化抓取或群发——社交媒体类用例都附带平台风控提醒。
+- **不要** 编造不存在的功能或命令;不确定就明确指出并请用户验证。
 
 ---
 
