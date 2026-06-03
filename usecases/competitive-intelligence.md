@@ -4,6 +4,12 @@
 
 用 Perplexity MCP（联网搜索）和 Firecrawl MCP（网页抓取）构建一个持续运行的竞品监控智能体。它每周自动扫描竞品动态，也支持按专题随时深挖，把原来每月 $150+ 的竞品分析订阅和 10 小时人工调研，压缩到每月约 $1.20 和 6 分钟。
 
+> **👤 人机分工（最小必要人工 · 时点 · 凭证）**
+> - **一次性（开始前）**：注册 Perplexity 与 Firecrawl 账号并获取两个 API Key；提供要监控的竞品清单（业务判断，由人决定监控谁）。配置 MCP 服务器、把竞品清单写入 `.claude/research-profiles/competitor-watchlist.md`、创建 `/competitive-check` 命令、设置每周 cron——这些可让 Agent 用自然语言代办；如需推送再在飞书后台创建机器人并取得 Webhook。
+> - **周期性 / 自动**：cron 每周一 9 点（Asia/Shanghai）自动跑周报；人工仅在 API Key 失效或额度耗尽时续期。
+> - **外发前确认**：将竞品周报推送到飞书/Slack 团队群（发往自有内部频道，建议确认推送内容）。
+> - **凭证**：`PERPLEXITY_API_KEY`、`FIRECRAWL_API_KEY`、`FEISHU_WEBHOOK_URL`
+
 ## 功能介绍
 
 - **周报模式**：每周自动扫描预设的竞品列表，输出定价变动、功能更新、内容策略等关键动态
