@@ -7,7 +7,7 @@
 这个用例让 OpenClaw 每个交易日自动采集 A 股行情数据，整理成结构化简报推送给你。
 
 > **👤 人机分工（最小必要人工 · 时点 · 凭证）**
-> - **一次性（开始前）**：选数据源——`pip install akshare`（免费、无需 Key）或在配置里添加 cn-a-stock MCP 服务器；配置飞书/钉钉/企业微信推送（参考对应 IM 集成用例）；需分钟级数据时可选申请 Tushare Pro 并填 `TUSHARE_TOKEN`。
+> - **一次性（开始前）**：选数据源（业务决策：AKShare 免费 / cn-a-stock MCP / 可选 Tushare Pro）；完成飞书/钉钉/企业微信推送的**账号授权**（参考对应 IM 集成用例）；需分钟级数据时注册 Tushare Pro 并提供 `TUSHARE_TOKEN`。`pip install akshare`、添加 MCP 配置等可直接交给 agent。
 > - **周期性 / 自动**：cron 工作日自动跑——盘前简报 8:30、盘后复盘 15:30（Asia/Shanghai）；人工无需介入。
 > - **外发前确认**：仅有的对外动作是把简报推送到飞书（纯数据采集+只读整理，不交易/不下单/不付费）；交易决策由用户自己做，不交给 AI。
 > - **凭证**：AKShare 无需 Key；可选 `TUSHARE_TOKEN`；飞书推送凭证按 IM 集成用例配置。
