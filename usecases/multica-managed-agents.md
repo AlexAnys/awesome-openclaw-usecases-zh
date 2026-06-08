@@ -20,16 +20,6 @@
 - **同一 Issue 多 Agent 接力** — Issue #12「修登录 bug」先指派给 OpenClaw 做根因分析，OpenClaw 在评论里 `@codex` 把修复任务交棒，Codex 拿到完整上下文（含 OpenClaw 写的诊断结论）继续编码，最后 `@claude` 跑 E2E 验证
 - **评论即协议** — Agent 之间通过 Issue 评论交换结论、链接、产物路径，所有交接对你完全透明，看板上一目了然
 
-> **👤 人机分工（最小必要人工 · 时点 · 凭证）**
-> - **一次性（开始前）**：只做 Agent 替不了的三件事——① 在 Agent 停下来问"云端 multica.ai / 自部署"时**做选择**；② **提供 / 批准凭证实际值**（自部署的 `DATABASE_URL` 数据库账密、注入到 Agent Env Vars 的各 CLI 密钥），Agent 用到凭证前会停下来问你；③ 云端首次登录时**点邮件链接 / 完成 Google OAuth**。
-> - **付费 / 门槛**：自部署免费（Apache 2.0，需本机 Docker）；云端依赖邮件 / Google OAuth 登录，国内访问可能不稳。
-> - **周期性 / 自动**：daemon 常驻自动拉任务（每 3 秒）与心跳（每 15 秒）；Autopilot 按 Cron（如每天 9:00）自动建 Issue 并分配，人工仅在凭证续期 / token 过期时介入。
-> - **事件触发**：Webhook 触发自动建 Issue；Issue 进入终态（completed / failed）时 Agent 推送飞书卡片通知。
-> - **外发前确认**：Agent 用到凭证前需停下来问你；提交 PR、向飞书 webhook 发消息、在 staging 跑 E2E / 部署等对外动作需用户确认。
-> - **凭证**：`ANTHROPIC_API_KEY`、`OPENAI_API_KEY`、`FEISHU_WEBHOOK_URL`、`JWT_SECRET`、`DATABASE_URL`、`FRONTEND_ORIGIN`（云端邮件登录另需 `RESEND_API_KEY`、`RESEND_FROM_EMAIL`）
->
-> 装 CLI / 跑 setup / 生成密钥 / daemon 验证 / 建 Agent 等能力项不列在此——由你的 agent 现场探测并代办（协议见 [AGENTS.md](../AGENTS.md)，本文件 0 节有现成提示词）。
-
 ## 它能做什么
 
 - **自动发现 CLI** — Daemon（守护进程）启动时扫描 PATH，自动检测 `claude` / `codex` / `openclaw` / `hermes` / `gemini` / `opencode` / `pi` / `cursor-agent` / `kimi` / `kiro-cli`，注册为可选 Provider（智能体提供方）
