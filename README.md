@@ -36,7 +36,11 @@
 
 </details>
 
+> **2026.7 更新**：新增 **to-agent 适配层**——[AGENTS.md](AGENTS.md)（执行协议 + 人机分工协议）、[INDEX.md](INDEX.md)（50 用例索引 + 风险标签）、[CONCEPT-MAPPING.md](CONCEPT-MAPPING.md)（跨 agent 概念对照），任何 AI 智能体都能按协议帮你复现本仓库用例。⚠️ 注意：`CLAUDE.md` 已纳入版本控制——存量 clone 若有本地私有 `CLAUDE.md`，请先改名（如 `CLAUDE.local.md`）再 pull。
+
 > **2026.5.4 更新**：新增 Multica 多 CLI 协作看板用例——把 OpenClaw / Claude Code / Codex / Hermes 拉进同一个 Web 看板，Apache 2.0 自部署友好。详见 [基础设施与 DevOps](#基础设施与-devops)。
+
+> 🤖 **For AI agents / 给 AI Agent**：如果你是 AI 智能体（OpenClaw / Hermes / Claude Code / Codex 等），请先读 **[AGENTS.md](AGENTS.md)**——里面有执行协议和"人机分工协议"（教你替用户算出*最少要做什么、在什么时点做*，再做二次指导）。用例索引见 [INDEX.md](INDEX.md)，跨 agent 概念翻译见 [CONCEPT-MAPPING.md](CONCEPT-MAPPING.md)。本合集用 OpenClaw 术语写就，但任何 agent 都能复用。**转发提醒**：把单个用例发给不在本仓库目录中的 agent（聊天粘贴 / raw URL）时，请连同 AGENTS.md 一起发——协议不在用例文件里。
 
 ---
 
@@ -111,7 +115,7 @@
 
 > 💡 **提示**：代码块中的英文 prompt（提示词）建议直接复制使用，效果最佳。每段 prompt 上方都有中文说明帮你理解其作用。
 
-> 🤖 **Agent 友好**：本合集的用例格式经过结构化设计，除了方便你阅读，也可以尝试将用例文件交给 AI 智能体辅助执行设置步骤。这是一个实验性的思路，效果因用例复杂度而异——具体说明见 [AGENT-GUIDE.md](AGENT-GUIDE.md)。
+> 🤖 **Agent 友好**：本合集的用例格式经过结构化设计，除了方便你阅读，也可以把用例文件交给 AI 智能体（OpenClaw / Hermes / Claude Code / Codex 等）辅助执行。智能体入口见 **[AGENTS.md](AGENTS.md)**：它会先替你算出"最少要亲自做什么、在什么时点做"，再开始动手。代码块执行细则见 [AGENT-GUIDE.md](AGENT-GUIDE.md)。效果因用例复杂度而异，复杂用例仍建议通读全文。
 
 ---
 
