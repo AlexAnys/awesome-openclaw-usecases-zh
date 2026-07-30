@@ -46,6 +46,9 @@
 
 ## 🗂 目录
 
+- [OpenClaw Monitor](https://github.com/flik2002/openclaw-monitor) — Real-time AI agent monitoring dashboard for OpenClaw
+
+
 - [新手入门指南](#-新手入门指南)
 - **[🇨🇳 中国特色用例](#-中国特色用例)** — 23 个国内生态用例
   - [平台机器人](#平台机器人) (4) — 飞书、钉钉、企业微信等 IM 平台 AI 接入
