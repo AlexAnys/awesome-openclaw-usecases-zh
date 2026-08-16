@@ -182,6 +182,8 @@ CI 流水线包含：
 - E2E 测试
 - Playwright 测试（对照与生产一致的预览环境）
 
+如需让编码 Agent 之外的专用 QA Agent 执行并持续改进用户流测试，可选用 [Agent QA](https://github.com/vostride/agent-qa)：它通过 CLI 或 MCP 接收自然语言 Web/移动端测试，并利用持久测试记忆复用历史执行经验、自修复后续测试。
+
 规则：UI 变更的 PR 必须在描述中包含截图，否则 CI 直接失败。这大幅缩短了审查时间——无需手动点开预览环境。
 
 ### Step 7：人工审查
@@ -270,6 +272,7 @@ OpenClaw 会分析代码库、创建脚本、配置 Cron 监控。约 10 分钟�
 - [原文 (X/Twitter)](https://x.com/elvissun/status/2025920521871716562) — Elvis Sun 的完整文章
 - [中文版 (知乎)](https://zhuanlan.zhihu.com/p/2010127051726792220) — 含完整图表
 - [OpenClaw 官方仓库](https://github.com/openclaw/openclaw)
+- [Agent QA：开源自改进 QA Agent](https://github.com/vostride/agent-qa)
 - [Anthropic：构建有效的智能体](https://www.anthropic.com/research/building-effective-agents)
 
 ## 中国用户适配
