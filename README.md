@@ -321,10 +321,10 @@
 
 ## 📈 Star History
 
-<a href="https://star-history.com/#AlexAnys/awesome-openclaw-usecases-zh&Date">
+<a href="https://star-history.dera.page/#AlexAnys/awesome-openclaw-usecases-zh&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date" />
+   <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=AlexAnys/awesome-openclaw-usecases-zh&type=Date" />
  </picture>
 </a>
