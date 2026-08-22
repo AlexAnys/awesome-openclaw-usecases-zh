@@ -52,7 +52,7 @@
   - [内容创作与发布](#内容创作与发布) (3) — 小红书、公众号、播客全流程自动化
   - [数据研究与监控](#数据研究与监控) (7) — A 股、财报、竞品、论文、中文互联网研究
   - [办公与客户服务](#办公与客户服务) (4) — 邮件、会议、多渠道客服、电商多 Agent
-  - [个人助理与智能体架构](#个人助理与智能体架构) (5) — 早间简报、人格档案、多 Agent 编排
+  - [个人助理与智能体架构](#个人助理与智能体架构) (6) — 早间简报、人格档案、多 Agent 编排
 - **[🌐 通用场景](#-通用场景)** — 国际用例合集（部分含国内适配）
   - [社交媒体](#社交媒体) (4) — Reddit、YouTube、X 等平台内容聚合
   - [创意与构建](#创意与构建) (3) — 内容创作流水线、从零构建产品
@@ -186,6 +186,7 @@
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
 | [Agent Swarm 一人开发团队（适配）](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队，全自动化开发流水线 | ⭐⭐⭐ |
 | [Multica 智能体看板（适配）](usecases/multica-managed-agents.md) | 把 OpenClaw / Claude Code / Codex / Hermes 拉进同一个 Web 看板，Issue 即任务、Apache 2.0 自部署 | ⭐⭐ |
+| [AI 助手认知记忆（Mnemosyne）](usecases/cn-mnemosyne-memory-engine.md) | 零依赖、零 API 成本给助手装持久记忆：纯本地 Markdown 存储，认知心理学检索，数据不出境 | ⭐⭐ |
 
 ---
 
