@@ -272,7 +272,7 @@ OpenClaw 会分析代码库、创建脚本、配置 Cron 监控。约 10 分钟�
 - [原文 (X/Twitter)](https://x.com/elvissun/status/2025920521871716562) — Elvis Sun 的完整文章
 - [中文版 (知乎)](https://zhuanlan.zhihu.com/p/2010127051726792220) — 含完整图表
 - [OpenClaw 官方仓库](https://github.com/openclaw/openclaw)
-- [Agent QA：开源自改进 QA Agent](https://github.com/vostride/agent-qa)
+- [Agent QA：源码可用的自改进 QA Agent](https://github.com/vostride/agent-qa)
 - [Anthropic：构建有效的智能体](https://www.anthropic.com/research/building-effective-agents)
 
 ## 中国用户适配
