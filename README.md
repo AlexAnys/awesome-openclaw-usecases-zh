@@ -5,12 +5,12 @@
 <br/>
 <br/>
 
-<p><strong>50 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
+<p><strong>51 个经过验证的真实场景，手把手教你用 AI 智能体自动化工作与生活</strong></p>
 
 <br/>
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-![用例数量](https://img.shields.io/badge/用例-50-blue?style=flat-square)
+![用例数量](https://img.shields.io/badge/用例-51-blue?style=flat-square)
 ![中文](https://img.shields.io/badge/语言-简体中文-red?style=flat-square)
 ![新手友好](https://img.shields.io/badge/难度-新手友好-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
@@ -222,6 +222,7 @@
 |------|------|:---:|
 | [n8n 工作流编排](usecases/n8n-workflow-orchestration.md) | 通过 webhook 将 API 调用委托给 n8n 工作流，智能体从不接触凭证 | ⭐⭐⭐ |
 | [Opik 可观测性追踪](usecases/opik-openclaw-observability.md) | 将 OpenClaw 运行链路接入 Opik，统一查看 LLM/工具/子智能体追踪，并监控 token 与成本 | ⭐⭐ |
+| [OrcaReplay 失败运行回放](usecases/orcareplay-replay-failed-openclaw-run.md) | 把整次 OpenClaw 运行录成本地 trace，断网逐字节重放定位出错的那一步，并从出事前的 checkpoint 换模型重试 | ⭐⭐ |
 | [自愈家庭服务器](usecases/self-healing-home-server.md) | 运行始终在线的基础设施智能体，自动发现并修复故障 | ⭐⭐⭐ |
 | [Agent Swarm 一人开发团队](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队实现全自动化开发流水线（国内适配） | ⭐⭐⭐ |
 | [Multica 智能体看板](usecases/multica-managed-agents.md) | 多 CLI 智能体统一 Web 看板，Issue 即任务、Skills 可复用，Apache 2.0 自部署（国内适配） | ⭐⭐ |

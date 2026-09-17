@@ -1,8 +1,8 @@
 # INDEX.md
 
-50 个用例的扁平索引。每行 = 路径 / 一句话中文摘要 / 风险标签。Agent 可用本文件做仓库导航，无需 grep 文件名。
+51 个用例的扁平索引。每行 = 路径 / 一句话中文摘要 / 风险标签。Agent 可用本文件做仓库导航，无需 grep 文件名。
 
-> 分组按内容归属，**每个用例在本文件只出现一次**（深度国内适配的国际用例归入「中国特色」组，不再重复列于通用组）；README 的人类目录会把这类用例双列展示，因此两边的分节计数不同、总数一致（50）。
+> 分组按内容归属，**每个用例在本文件只出现一次**（深度国内适配的国际用例归入「中国特色」组，不再重复列于通用组）；README 的人类目录会把这类用例双列展示，因此两边的分节计数不同、总数一致（51）。
 
 ## 风险标签
 
@@ -71,7 +71,7 @@
 
 ---
 
-## 通用场景（27）
+## 通用场景（28）
 
 ### 社交媒体
 
@@ -96,6 +96,7 @@
 |---|---|---|
 | [n8n-workflow-orchestration.md](usecases/n8n-workflow-orchestration.md) | webhook 委托 n8n 工作流，Agent 不接触凭证 | `external-api` `credential-heavy` |
 | [opik-openclaw-observability.md](usecases/opik-openclaw-observability.md) | Opik 接入 OpenClaw 链路追踪，监控 token / 成本 | `external-api` `writes-local` |
+| [orcareplay-replay-failed-openclaw-run.md](usecases/orcareplay-replay-failed-openclaw-run.md) | 录制整次 OpenClaw 运行到离线 trace，逐字节重放定位失败步骤并换模型重试 | `writes-local` `external-api` |
 | [self-healing-home-server.md](usecases/self-healing-home-server.md) | 始终在线的基础设施 Agent，自动发现并修复故障 | `credential-heavy` `writes-local` |
 
 ### 生产力
