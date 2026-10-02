@@ -186,6 +186,7 @@
 | [多智能体协作操作系统](usecases/cn-multi-agent-operating-system.md) | 把 OpenClaw 变成专业分工、协同、稳定迭代的智能体系统 | ⭐⭐⭐ |
 | [Agent Swarm 一人开发团队（适配）](usecases/agent-swarm-dev-team.md) | OpenClaw 编排 Codex + Claude Code 舰队，全自动化开发流水线 | ⭐⭐⭐ |
 | [Multica 智能体看板（适配）](usecases/multica-managed-agents.md) | 把 OpenClaw / Claude Code / Codex / Hermes 拉进同一个 Web 看板，Issue 即任务、Apache 2.0 自部署 | ⭐⭐ |
+| [习惯追踪与打卡教练（适配）](usecases/habit-tracker-accountability-coach.md) | OpenClaw 化身打卡教练：每日定时主动找你确认习惯进度，连击统计 + 自适应提醒（国内消息通道适配） | ⭐⭐ |
 
 ---
 
